@@ -1,0 +1,19 @@
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+media/
+staticfiles/
+# Listas comerciales privadas; conservar copias locales fuera de GitHub.
+backend/catalog/data/lista_mayorista_2026.csv
+backend/catalog/data/lista_precios_normal_2026.csv
+node_modules/
+dist/
+.vite/
+coverage/
+.DS_Store

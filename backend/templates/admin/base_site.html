@@ -1,0 +1,19 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'admin/css/siempre-natural.css' %}">
+{% endblock %}
+
+{% block branding %}
+  <div class="brand-lockup">
+    <img class="brand-logo" src="{% static 'img/logo-siempre-natural.png' %}" alt="">
+    <div>
+      <h1 id="site-name"><a href="{% url 'admin:index' %}">Siempre Natural</a></h1>
+      <p class="brand-subtitle">Panel de administración</p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
