@@ -173,6 +173,138 @@ body {
   border-bottom: 0;
 }
 
+.margin-section-title {
+  margin: 30px 0 15px;
+  color: #2e4833;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.margin-chart-grid,
+.margin-ranking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 390px), 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.margin-chart-card {
+  min-width: 0;
+  padding-bottom: 12px;
+}
+
+.margin-chart-card h3 {
+  margin: 0;
+  padding: 13px 17px;
+  background: #eaf0e5;
+  color: #304934;
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.margin-bar-chart,
+.margin-pie-legend {
+  display: grid;
+  gap: 13px;
+  margin: 0;
+  padding: 17px;
+  list-style: none;
+}
+
+.margin-bar-chart li {
+  min-width: 0;
+}
+
+.margin-bar-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.margin-bar-label span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.margin-bar-track {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #edf0e9;
+}
+
+.margin-bar-fill {
+  display: block;
+  height: 100%;
+  min-width: 2px;
+  border-radius: inherit;
+  background: #45664a;
+}
+
+.margin-bar-loss {
+  background: #b94a48;
+}
+
+.margin-pie-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 17px;
+}
+
+.margin-pie {
+  width: 170px;
+  height: 170px;
+  flex: 0 0 170px;
+  border: 1px solid #e1e4da;
+  border-radius: 50%;
+}
+
+.margin-pie-legend {
+  width: 100%;
+  gap: 9px;
+  padding: 0;
+  font-size: 12px;
+}
+
+.margin-pie-legend li {
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.margin-legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.margin-empty {
+  padding: 0 17px;
+  color: #646d5c;
+}
+
+.margin-ranking-grid .module {
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .margin-pie-layout {
+    flex-direction: column;
+  }
+
+  .margin-pie-legend {
+    width: 100%;
+  }
+}
+
 .module table tr:nth-child(even),
 #changelist table tbody tr:nth-child(even) {
   background: #faf9f5;

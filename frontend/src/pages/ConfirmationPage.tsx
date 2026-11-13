@@ -51,6 +51,7 @@ export function ConfirmationPage() {
           <div className="confirmation-summary">
             <div><span>Número de pedido</span><strong>{order.id}</strong></div>
             <div><span>Total registrado</span><strong>{formatCLP(order.total)}</strong></div>
+            <div><span>Preferencia de empaque</span><strong>{order.packaging_preference}</strong></div>
           </div>
         ) : (
           <p className="form-hint">Identificador del pedido: {orderId}. Los datos del pedido no se exponen en este enlace.</p>

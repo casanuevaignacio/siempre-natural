@@ -51,6 +51,7 @@ export interface OrderRequest {
   customer_email: string;
   customer_rut: string;
   delivery_mode: "pickup" | "shipping";
+  packaging_preference: "no_plastic" | "plastic";
   delivery_address: string;
   notes: string;
   items: Array<{
@@ -65,6 +66,7 @@ export interface CreatedOrder {
   created_at: string;
   total: string;
   status: string;
+  packaging_preference: string;
   email_notification_sent: boolean;
 }
 
@@ -80,6 +82,7 @@ export interface CustomerOrder {
   total: string;
   status: string;
   delivery_mode: string;
+  packaging_preference: string;
   items: Array<{
     name: string;
     quantity_grams: number;

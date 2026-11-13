@@ -29,6 +29,18 @@ class OrderCreateSerializer(serializers.Serializer):
     customer_email = serializers.EmailField()
     customer_rut = serializers.CharField(max_length=16, required=False, allow_blank=True)
     delivery_mode = serializers.ChoiceField(choices=Order.DeliveryMode.choices)
+    packaging_preference = serializers.ChoiceField(
+        choices=(
+            (
+                Order.PackagingPreference.NO_PLASTIC,
+                Order.PackagingPreference.NO_PLASTIC.label,
+            ),
+            (
+                Order.PackagingPreference.PLASTIC,
+                Order.PackagingPreference.PLASTIC.label,
+            ),
+        ),
+    )
     delivery_address = serializers.CharField(
         max_length=250,
         required=False,
@@ -158,6 +170,16 @@ class OrderCreateSerializer(serializers.Serializer):
 
 
 class OrderCreatedSerializer(serializers.ModelSerializer):
+    packaging_preference = serializers.CharField(
+        source="get_packaging_preference_display",
+    )
+
     class Meta:
         model = Order
-        fields = ("id", "created_at", "total", "status")
+        fields = (
+            "id",
+            "created_at",
+            "total",
+            "status",
+            "packaging_preference",
+        )

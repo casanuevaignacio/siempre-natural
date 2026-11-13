@@ -1,0 +1,35 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+  {{ block.super }}
+  {% if perms.orders.view_margin_report %}
+    <div class="module">
+      <table>
+        <caption>Gestión financiera</caption>
+        <tbody>
+          <tr>
+            <th scope="row">
+              <a href="{% url 'admin:orders_order_margins' %}">Reporte de márgenes</a>
+            </th>
+            <td>Ventas completadas, costos y márgenes por período.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  {% endif %}
+  {% if perms.catalog.change_product and perms.catalog.change_productpurchase %}
+    <div class="module">
+      <table>
+        <caption>Precios y costos</caption>
+        <tbody>
+          <tr>
+            <th scope="row">
+              <a href="{% url 'admin:catalog_product_spreadsheet' %}">Planilla Excel de precios y costos</a>
+            </th>
+            <td>Descarga, edita y vuelve a cargar precios de venta y compras.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  {% endif %}
+{% endblock %}

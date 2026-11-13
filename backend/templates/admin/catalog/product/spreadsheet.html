@@ -1,0 +1,29 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+  <div id="content-main">
+    <div class="module">
+      <h2>Descargar y editar</h2>
+      <p>Descarga el Excel actual, edita las celdas amarillas y súbelo abajo para guardar los cambios.</p>
+      <p><a class="button" href="{{ export_url }}">Descargar planilla Excel</a></p>
+    </div>
+
+    <div class="module" style="margin-top: 20px;">
+      <h2>Aplicar cambios del Excel</h2>
+      <ul>
+        <li>La hoja <strong>Precios de venta</strong> actualiza los precios del catálogo y el costo actual por kg o unidad.</li>
+        <li>El costo actual de la primera hoja se usa para calcular márgenes de ventas futuras. Si queda vacío, se usa el promedio de compras anteriores.</li>
+        <li>La hoja <strong>Compras y costos</strong> permite corregir compras existentes. Para agregar o eliminar compras usa el Admin.</li>
+        <li>Las filas omitidas no se borran. Las celdas amarillas de precio en blanco quitan ese precio.</li>
+        <li>Los cambios de costos no alteran costos históricos guardados en pedidos completados.</li>
+      </ul>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="submit-row">
+          <input type="submit" value="Aplicar cambios" class="default">
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

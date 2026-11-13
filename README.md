@@ -65,6 +65,40 @@ python backend\manage.py runserver
 Admin: <http://127.0.0.1:8000/admin/>
 API: <http://127.0.0.1:8000/api/>
 
+## Costos y márgenes de gestión
+
+En Django Admin, registra cada compra desde **Compras de productos**. Ingresa
+la cantidad en kilogramos para productos a granel o en unidades para productos
+por presentación, junto con el costo total y la fecha. Puedes incluir flete o
+envases en ese costo total si quieres que formen parte del costo del producto.
+
+En **Catálogo → Productos → Planilla de precios y costos**, puedes descargar un
+Excel con dos hojas: **Precios de venta** y **Compras y costos**. En la primera
+hoja edita precio de venta, tramo de 250 g y costo actual por kg o por unidad.
+En la segunda puedes revisar y corregir compras individuales. Edita las celdas
+amarillas y carga el archivo en la misma página. Para agregar o borrar una
+compra usa el Admin; borrar filas de Excel no elimina registros.
+
+Al marcar un pedido como **Completado**, el sistema guarda el costo actual del
+producto. Si no se ha indicado ese costo, usa como alternativa el costo promedio
+ponderado de las compras registradas hasta esa fecha. El costo queda congelado
+para conservar el margen histórico; editar después el costo actual o las
+compras no cambia pedidos completados anteriormente. Si no hay costo actual ni
+compras anteriores, el costo y el margen quedan sin determinar.
+
+El reporte está en **Pedidos → Ver márgenes** y muestra ventas completadas,
+costos registrados, utilidad bruta y margen por producto en un rango de fechas.
+Incluye gráficos de ventas y utilidad, productos con mejor margen, mayor
+utilidad y rankings por cantidad de pedidos completados. Los productos activos
+sin ventas se muestran con cero pedidos en el ranking de menor movimiento. Estos
+rankings cuentan pedidos que incluyeron el producto, no comparan kilogramos con
+unidades.
+Solo lo ven los usuarios con el permiso **Puede ver el reporte de márgenes**
+(`orders.view_margin_report`); asígnalo desde **Administración → Usuarios**.
+El enlace también aparece en el inicio del Admin para esos usuarios.
+Los pedidos completados no necesariamente están pagados, y este reporte no
+incluye gastos generales ni reemplaza la contabilidad tributaria.
+
 La cuenta de superusuario de desarrollo es local y no se distribuye con el
 código. Si ya existe una cuenta en tu instalación, establece o cambia su
 contraseña localmente en una terminal interactiva:
@@ -177,6 +211,8 @@ Abre <http://localhost:5173/>.
   dominio siguen pendientes de confirmación por el negocio.
 - Retiro y despacho se registran como modalidades solicitadas; el sistema no
   asume ni cobra costos de entrega.
+- Al registrar un pedido, el cliente elige envase sin plástico o bolsa plástica.
+  La preferencia queda guardada en el Admin y se incluye en el aviso a la tienda.
 - WhatsApp permite coordinar cobertura y costos de despacho. La tienda confirma
   disponibilidad y total del pedido antes de enviar los datos para transferencia.
   Si el navegador no abre el enlace, el pedido queda guardado en el Admin.

@@ -1,0 +1,204 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+  <div id="content-main">
+    <form method="get" style="margin-bottom: 1.5rem;">
+      <label for="start">Desde</label>
+      <input id="start" type="date" name="start" value="{{ start_date }}" required>
+      <label for="end">Hasta</label>
+      <input id="end" type="date" name="end" value="{{ end_date }}" required>
+      <button type="submit" class="button">Filtrar</button>
+    </form>
+
+    <p>Incluye pedidos marcados como completados. Esto no confirma que hayan sido pagados.</p>
+    {% if totals.missing_items %}
+      <p class="errornote">
+        Hay {{ totals.missing_items }} producto{{ totals.missing_items|pluralize }} vendido{{ totals.missing_items|pluralize }} sin costo registrado{{ totals.missing_items|pluralize }}.
+        Los márgenes no se muestran como completos.
+      </p>
+    {% endif %}
+
+    <div class="module">
+      <table>
+        <caption>Resumen del período</caption>
+        <tbody>
+          <tr><th>Ventas completadas</th><td>${{ totals.sales|floatformat:0 }}</td></tr>
+          <tr><th>Costos registrados</th><td>${{ totals.cost|floatformat:0 }}</td></tr>
+          <tr><th>Utilidad bruta</th>
+            <td>{% if totals.margin != None %}${{ totals.profit|floatformat:0 }}{% else %}No disponible{% endif %}</td>
+          </tr>
+          <tr><th>Margen</th>
+            <td>{% if totals.margin != None %}{{ totals.margin|floatformat:1 }}%{% else %}No disponible{% endif %}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="margin-section-title">Gráficos del período</h2>
+    <div class="margin-chart-grid">
+      <section class="module margin-chart-card">
+        <h3>Ventas por producto</h3>
+        {% if sales_chart %}
+          <ul class="margin-bar-chart">
+            {% for product in sales_chart %}
+              <li>
+                <div class="margin-bar-label">
+                  <span>{{ product.name }}</span>
+                  <strong>${{ product.sales|floatformat:0 }}</strong>
+                </div>
+                <div class="margin-bar-track">
+                  <span class="margin-bar-fill" style="width: {{ product.bar_percent }}%; background-color: {{ product.chart_color }};"></span>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p class="margin-empty">No hay ventas completadas para graficar.</p>
+        {% endif %}
+      </section>
+
+      <section class="module margin-chart-card">
+        <h3>Distribución de ventas</h3>
+        {% if pie_data %}
+          <div class="margin-pie-layout">
+            <div
+              class="margin-pie"
+              role="img"
+              aria-label="Gráfico circular de distribución de ventas por producto"
+              style="background: conic-gradient({% for slice in pie_data %}{{ slice.color }} {{ slice.start }}% {{ slice.end }}%{% if not forloop.last %}, {% endif %}{% endfor %});"
+            ></div>
+            <ul class="margin-pie-legend">
+              {% for slice in pie_data %}
+                <li>
+                  <span class="margin-legend-swatch" style="background-color: {{ slice.color }};"></span>
+                  <span>{{ slice.name }}</span>
+                  <strong>{{ slice.percent }}%</strong>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% else %}
+          <p class="margin-empty">No hay ventas completadas para graficar.</p>
+        {% endif %}
+      </section>
+
+      <section class="module margin-chart-card">
+        <h3>Utilidad bruta por producto</h3>
+        {% if profit_chart %}
+          <ul class="margin-bar-chart">
+            {% for product in profit_chart %}
+              <li>
+                <div class="margin-bar-label">
+                  <span>{{ product.name }}</span>
+                  <strong>${{ product.profit|floatformat:0 }}</strong>
+                </div>
+                <div class="margin-bar-track">
+                  <span class="margin-bar-fill{% if product.profit < 0 %} margin-bar-loss{% endif %}" style="width: {{ product.bar_percent }}%;"></span>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p class="margin-empty">Se necesitan costos completos para graficar la utilidad.</p>
+        {% endif %}
+      </section>
+    </div>
+
+    <h2 class="margin-section-title">Productos destacados</h2>
+    <div class="margin-ranking-grid">
+      <section class="module">
+        <table>
+          <caption>Mejor margen</caption>
+          <thead><tr><th>Producto</th><th>Margen</th><th>Utilidad</th></tr></thead>
+          <tbody>
+            {% for product in best_margin %}
+              <tr><th>{{ product.name }}</th><td>{{ product.margin|floatformat:1 }}%</td><td>${{ product.profit|floatformat:0 }}</td></tr>
+            {% empty %}
+              <tr><td colspan="3">Registra costos completos para calcular márgenes.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <section class="module">
+        <table>
+          <caption>Mayor utilidad bruta</caption>
+          <thead><tr><th>Producto</th><th>Utilidad</th><th>Ventas</th></tr></thead>
+          <tbody>
+            {% for product in highest_profit %}
+              <tr><th>{{ product.name }}</th><td>${{ product.profit|floatformat:0 }}</td><td>${{ product.sales|floatformat:0 }}</td></tr>
+            {% empty %}
+              <tr><td colspan="3">Registra costos completos para calcular utilidad.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <section class="module">
+        <table>
+          <caption>Más pedidos</caption>
+          <thead><tr><th>Producto</th><th>Pedidos</th></tr></thead>
+          <tbody>
+            {% for product in most_ordered %}
+              <tr><th>{{ product.name }}</th><td>{{ product.order_count }}</td></tr>
+            {% empty %}
+              <tr><td colspan="2">No hay pedidos completados en este período.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <section class="module">
+        <table>
+          <caption>Menos pedidos</caption>
+          <thead><tr><th>Producto</th><th>Pedidos</th></tr></thead>
+          <tbody>
+            {% for product in least_ordered %}
+              <tr><th>{{ product.name }}</th><td>{{ product.order_count }}</td></tr>
+            {% empty %}
+              <tr><td colspan="2">No hay productos para comparar.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <div class="module">
+      <table>
+        <caption>Detalle por producto</caption>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Ventas</th>
+            <th>Costos registrados</th>
+            <th>Utilidad bruta</th>
+            <th>Margen</th>
+            <th>Sin costo</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in products %}
+            <tr>
+              <th>{{ product.name }}</th>
+              <td>${{ product.sales|floatformat:0 }}</td>
+              <td>${{ product.cost|floatformat:0 }}</td>
+              <td>{% if product.margin != None %}${{ product.profit|floatformat:0 }}{% else %}No disponible{% endif %}</td>
+              <td>{% if product.margin != None %}{{ product.margin|floatformat:1 }}%{% else %}No disponible{% endif %}</td>
+              <td>{{ product.missing_items }}</td>
+            </tr>
+          {% empty %}
+            <tr><td colspan="6">No hay ventas completadas en este período.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      El margen se calcula como (ventas - costo de productos) / ventas.
+      Los costos usan el promedio ponderado de compras registradas hasta la fecha de completado.
+      No incluye gastos generales, despacho ni envases no incluidos en la compra.
+      Los rankings de movimiento cuentan pedidos completados que incluyeron el producto,
+      no comparan kilogramos con unidades.
+    </p>
+  </div>
+{% endblock %}

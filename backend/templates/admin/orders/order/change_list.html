@@ -1,0 +1,8 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools-items %}
+  {% if margin_report_url %}
+    <li><a href="{{ margin_report_url }}">Ver márgenes</a></li>
+  {% endif %}
+  {{ block.super }}
+{% endblock %}

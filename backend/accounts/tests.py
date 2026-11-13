@@ -178,6 +178,7 @@ class CustomerAccountTests(TestCase):
                 "customer_phone": "912345678",
                 "customer_email": account.email,
                 "delivery_mode": "pickup",
+                "packaging_preference": "plastic",
                 "items": [{"product_id": product.pk, "quantity_grams": 100}],
             },
             format="json",
@@ -186,6 +187,11 @@ class CustomerAccountTests(TestCase):
         self.assertEqual(response.status_code, 201)
         order = Order.objects.get(pk=response.data["id"])
         self.assertEqual(order.customer_id, account.pk)
+        self.assertEqual(order.packaging_preference, "plastic")
+        self.assertEqual(
+            self.client.get("/api/customer/orders/").data[0]["packaging_preference"],
+            "Bolsa plástica (ayuda a conservar mejor los productos)",
+        )
 
     def test_guest_order_claim_requires_signed_email_link(self):
         self.register()

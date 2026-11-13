@@ -6,6 +6,7 @@ admin.site.site_header = "Siempre Natural"
 admin.site.site_title = "Siempre Natural | Administración"
 admin.site.index_title = "Panel de administración"
 admin.site.enable_nav_sidebar = False
+admin.site.index_template = "admin/index_with_margin.html"
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 

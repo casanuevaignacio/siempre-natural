@@ -11,6 +11,11 @@ class Order(models.Model):
         PICKUP = "pickup", "Retiro"
         SHIPPING = "shipping", "Despacho"
 
+    class PackagingPreference(models.TextChoices):
+        UNSPECIFIED = "", "No especificado (pedido anterior)"
+        NO_PLASTIC = "no_plastic", "Envase sin plástico (opción sustentable)"
+        PLASTIC = "plastic", "Bolsa plástica (ayuda a conservar mejor los productos)"
+
     class Status(models.TextChoices):
         RECEIVED = "received", "Recibido"
         CONFIRMED = "confirmed", "Confirmado"
@@ -37,6 +42,13 @@ class Order(models.Model):
         max_length=8,
         choices=DeliveryMode.choices,
     )
+    packaging_preference = models.CharField(
+        "preferencia de empaque",
+        max_length=10,
+        choices=PackagingPreference.choices,
+        default=PackagingPreference.UNSPECIFIED,
+        blank=True,
+    )
     delivery_address = models.CharField("dirección de despacho", max_length=250, blank=True)
     notes = models.CharField("indicaciones", max_length=500, blank=True)
     total = models.DecimalField("total", max_digits=14, decimal_places=0)
@@ -46,11 +58,15 @@ class Order(models.Model):
         choices=Status.choices,
         default=Status.RECEIVED,
     )
+    completed_at = models.DateTimeField("fecha de completado", blank=True, null=True)
 
     class Meta:
         ordering = ["-created_at"]
         verbose_name = "pedido"
         verbose_name_plural = "pedidos"
+        permissions = [
+            ("view_margin_report", "Puede ver el reporte de márgenes"),
+        ]
 
     def __str__(self):
         return f"Pedido {self.id}"
@@ -91,6 +107,20 @@ class OrderItem(models.Model):
     quantity_grams = models.PositiveIntegerField("cantidad en gramos", default=0)
     quantity_units = models.PositiveIntegerField("cantidad de unidades", default=0)
     subtotal = models.DecimalField("subtotal", max_digits=14, decimal_places=0)
+    unit_cost_snapshot = models.DecimalField(
+        "costo unitario registrado",
+        max_digits=14,
+        decimal_places=4,
+        blank=True,
+        null=True,
+    )
+    cost_subtotal = models.DecimalField(
+        "costo de productos",
+        max_digits=14,
+        decimal_places=0,
+        blank=True,
+        null=True,
+    )
 
     class Meta:
         verbose_name = "producto del pedido"

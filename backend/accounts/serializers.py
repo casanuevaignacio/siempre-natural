@@ -77,4 +77,7 @@ class CustomerOrderHistorySerializer(serializers.Serializer):
     total = serializers.DecimalField(max_digits=14, decimal_places=0)
     status = serializers.CharField(source="get_status_display")
     delivery_mode = serializers.CharField(source="get_delivery_mode_display")
+    packaging_preference = serializers.CharField(
+        source="get_packaging_preference_display",
+    )
     items = CustomerOrderItemSerializer(many=True)

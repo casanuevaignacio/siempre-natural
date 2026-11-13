@@ -38,6 +38,7 @@ def send_order_notification(order):
     message_lines.extend(
         [
             f"Entrega: {delivery}",
+            f"Empaque: {order.get_packaging_preference_display()}",
             "",
             "Productos:",
             *item_lines,

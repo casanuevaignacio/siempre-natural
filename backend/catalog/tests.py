@@ -1,17 +1,26 @@
 from decimal import Decimal
-from io import StringIO
+from datetime import date
+from io import BytesIO, StringIO
 
 from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
 from django.core.exceptions import ValidationError
+from django.core.files.uploadedfile import SimpleUploadedFile
 from django.core.management import call_command
 from django.test import TestCase, override_settings
+from openpyxl import load_workbook
 from rest_framework.test import APIClient
 
 from .admin import ProductAdmin
-from .models import Category, Product, WholesalePrice
+from .models import Category, Product, ProductPurchase, WholesalePrice
 from .serializers import valid_whatsapp_number
+from .spreadsheets import (
+    PRICE_SHEET,
+    PURCHASE_SHEET,
+    WORKBOOK_NAME,
+    export_price_cost_workbook,
+)
 
 
 class ProductAdminImageUploadTests(TestCase):
@@ -30,6 +39,116 @@ class ProductAdminImageUploadTests(TestCase):
 
         self.assertNotIn("image", readonly_fields)
         self.assertNotIn("media_uploads_notice", readonly_fields)
+
+
+class PriceCostSpreadsheetTests(TestCase):
+    def setUp(self):
+        self.category = Category.objects.create(name="Planillas", slug="planillas")
+        self.product = Product.objects.create(
+            category=self.category,
+            name="Producto planilla",
+            slug="producto-planilla",
+            price=Decimal("1000"),
+            price_250g=Decimal("250"),
+            sale_unit=Product.SaleUnit.KILOGRAM,
+            is_active=True,
+        )
+        self.purchase = ProductPurchase.objects.create(
+            product=self.product,
+            purchased_on=date(2026, 11, 1),
+            purchase_unit=Product.SaleUnit.KILOGRAM,
+            quantity=Decimal("2"),
+            total_cost=Decimal("800"),
+            note="Compra original",
+        )
+        self.admin = get_user_model().objects.create_superuser(
+            username="spreadsheet-admin",
+            email="spreadsheet@example.com",
+            password="test-only",
+        )
+        self.client.force_login(self.admin)
+
+    def _exported_workbook(self):
+        return load_workbook(BytesIO(export_price_cost_workbook()))
+
+    def _uploaded_workbook(self, workbook):
+        content = BytesIO()
+        workbook.save(content)
+        return SimpleUploadedFile(
+            WORKBOOK_NAME,
+            content.getvalue(),
+            content_type=(
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            ),
+        )
+
+    def test_admin_can_download_template_edit_and_import_prices_and_costs(self):
+        self.assertContains(
+            self.client.get("/admin/"),
+            "Planilla Excel de precios y costos",
+        )
+        response = self.client.get("/admin/catalog/product/spreadsheet/export/")
+
+        self.assertEqual(response.status_code, 200)
+        workbook = load_workbook(BytesIO(response.content))
+        workbook[PRICE_SHEET]["F2"] = 1500
+        workbook[PRICE_SHEET]["G2"] = 375
+        workbook[PRICE_SHEET]["H2"] = 700.5
+        workbook[PURCHASE_SHEET]["G2"] = 900
+        workbook[PURCHASE_SHEET]["H2"] = "Costo corregido"
+
+        upload_response = self.client.post(
+            "/admin/catalog/product/spreadsheet/",
+            {"workbook": self._uploaded_workbook(workbook)},
+        )
+
+        self.assertEqual(upload_response.status_code, 302)
+        self.product.refresh_from_db()
+        self.purchase.refresh_from_db()
+        self.assertEqual(self.product.price, Decimal("1500"))
+        self.assertEqual(self.product.price_250g, Decimal("375"))
+        self.assertEqual(self.product.current_unit_cost, Decimal("700.5000"))
+        self.assertEqual(self.purchase.total_cost, Decimal("900"))
+        self.assertEqual(self.purchase.note, "Costo corregido")
+
+    def test_invalid_workbook_does_not_partially_update_rows(self):
+        second_product = Product.objects.create(
+            category=self.category,
+            name="Segundo producto",
+            slug="segundo-producto",
+            price=Decimal("2000"),
+        )
+        workbook = self._exported_workbook()
+        sheet = workbook[PRICE_SHEET]
+        second_row = next(
+            row
+            for row in range(2, sheet.max_row + 1)
+            if sheet.cell(row, 2).value == second_product.slug
+        )
+        sheet["F2"] = 1500
+        sheet.cell(second_row, 6, -1)
+
+        response = self.client.post(
+            "/admin/catalog/product/spreadsheet/",
+            {"workbook": self._uploaded_workbook(workbook)},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "debe ser positivo")
+        self.product.refresh_from_db()
+        self.assertEqual(self.product.price, Decimal("1000"))
+
+    def test_spreadsheet_routes_require_product_and_purchase_permissions(self):
+        staff_user = get_user_model().objects.create_user(
+            username="prices-only",
+            password="test-only",
+            is_staff=True,
+        )
+        self.client.force_login(staff_user)
+
+        response = self.client.get("/admin/catalog/product/spreadsheet/")
+
+        self.assertEqual(response.status_code, 403)
 
 
 class ProductSubtotalTests(TestCase):
@@ -111,6 +230,7 @@ class PublicCatalogApiTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data["name"], "Disponible")
         self.assertIsNone(response.data["price_250g"])
+        self.assertNotIn("current_unit_cost", response.data)
 
     def test_wholesale_only_product_is_not_public(self):
         Product.objects.create(

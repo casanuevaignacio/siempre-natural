@@ -65,6 +65,15 @@ class Product(models.Model):
         null=True,
         validators=[MinValueValidator(Decimal("0.01"))],
     )
+    current_unit_cost = models.DecimalField(
+        "costo actual por kg o unidad",
+        max_digits=14,
+        decimal_places=4,
+        blank=True,
+        null=True,
+        validators=[MinValueValidator(Decimal("0.0001"))],
+        help_text="Costo de referencia por kilogramo o por presentación, según la unidad de venta.",
+    )
     sale_unit = models.CharField(
         "unidad de venta",
         max_length=8,
@@ -185,3 +194,53 @@ class WholesalePrice(models.Model):
     def __str__(self):
         unit = self.package_label or "kg"
         return f"{self.product.name}: ${self.price}/{unit}"
+
+
+class ProductPurchase(models.Model):
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.PROTECT,
+        related_name="purchases",
+        verbose_name="producto",
+    )
+    purchased_on = models.DateField("fecha de compra")
+    purchase_unit = models.CharField(
+        "unidad de compra",
+        max_length=8,
+        choices=Product.SaleUnit.choices,
+    )
+    quantity = models.DecimalField(
+        "cantidad comprada",
+        max_digits=12,
+        decimal_places=3,
+        validators=[MinValueValidator(Decimal("0.001"))],
+        help_text="Registra kilogramos para productos a granel y unidades para los demás.",
+    )
+    total_cost = models.DecimalField(
+        "costo total en CLP",
+        max_digits=14,
+        decimal_places=2,
+        validators=[MinValueValidator(Decimal("0.01"))],
+    )
+    note = models.CharField("nota", max_length=250, blank=True)
+    created_at = models.DateTimeField("registrado", auto_now_add=True)
+
+    class Meta:
+        ordering = ["-purchased_on", "-created_at"]
+        verbose_name = "compra de producto"
+        verbose_name_plural = "compras de productos"
+
+    def clean(self):
+        super().clean()
+        if (
+            self.purchase_unit == Product.SaleUnit.UNIT
+            and self.quantity is not None
+            and self.quantity != self.quantity.to_integral_value()
+        ):
+            raise ValidationError(
+                {"quantity": "La cantidad de productos por unidad debe ser entera."}
+            )
+
+    def __str__(self):
+        unit = "kg" if self.purchase_unit == Product.SaleUnit.KILOGRAM else "unidades"
+        return f"{self.product.name}: {self.quantity} {unit} ({self.purchased_on})"

@@ -14,6 +14,9 @@ export function CartPage() {
   const { lines, total, update, remove, clear } = useCart();
   const navigate = useNavigate();
   const [deliveryMode, setDeliveryMode] = useState<"pickup" | "shipping">("pickup");
+  const [packagingPreference, setPackagingPreference] = useState<
+    "no_plastic" | "plastic" | ""
+  >("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [customerEmail, setCustomerEmail] = useState("");
@@ -56,11 +59,16 @@ export function CartPage() {
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!packagingPreference) {
+      setError("Elige una preferencia de empaque para continuar.");
+      return;
+    }
     setBusy(true);
     setError("");
     const payload: OrderRequest = {
       ...form,
       delivery_mode: deliveryMode,
+      packaging_preference: packagingPreference,
       items: lines.map(({ product, quantity }) =>
         product.sale_unit === "kg"
           ? { product_id: product.id, quantity_grams: quantity }
@@ -76,6 +84,7 @@ export function CartPage() {
         ),
         `Total informado: ${formatCLP(order.total)}`,
         `Entrega: ${deliveryMode === "pickup" ? "retiro" : "despacho"}`,
+        `Empaque: ${order.packaging_preference}`,
       ].join("\n");
       const storedOrder = {
         ...order,
@@ -178,6 +187,31 @@ export function CartPage() {
             <legend>Modalidad de entrega</legend>
             <label className="radio-option"><input checked={deliveryMode === "pickup"} onChange={() => setDeliveryMode("pickup")} type="radio" value="pickup" /> Retiro</label>
             <label className="radio-option"><input checked={deliveryMode === "shipping"} onChange={() => setDeliveryMode("shipping")} type="radio" value="shipping" /> Despacho</label>
+          </fieldset>
+          <fieldset>
+            <legend>Preferencia de empaque</legend>
+            <label className="radio-option">
+              <input
+                checked={packagingPreference === "no_plastic"}
+                name="packaging_preference"
+                onChange={() => setPackagingPreference("no_plastic")}
+                required
+                type="radio"
+                value="no_plastic"
+              />
+              Envase sin plástico (opción sustentable)
+            </label>
+            <label className="radio-option">
+              <input
+                checked={packagingPreference === "plastic"}
+                name="packaging_preference"
+                onChange={() => setPackagingPreference("plastic")}
+                required
+                type="radio"
+                value="plastic"
+              />
+              Bolsa plástica (ayuda a conservar mejor los productos)
+            </label>
           </fieldset>
           {deliveryMode === "shipping" && (
             <label>Dirección para despacho <textarea maxLength={250} onChange={(event) => updateField("delivery_address", event.target.value)} required value={form.delivery_address} /></label>

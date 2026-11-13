@@ -388,7 +388,7 @@ export function CustomerAccountPage() {
                         }).format(new Date(order.created_at))}
                       </span>
                     </div>
-                    <p>{order.status} · {order.delivery_mode}</p>
+                    <p>{order.status} · {order.delivery_mode} · {order.packaging_preference}</p>
                     <ul>
                       {order.items.map((item, index) => (
                         <li key={`${order.id}-${index}`}>
