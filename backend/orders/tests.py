@@ -8,6 +8,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 from django.core import mail
+from django.conf import settings
 from django.test import TestCase, override_settings
 from django.utils import timezone
 from rest_framework.test import APIClient
@@ -336,6 +337,10 @@ class AdminAccessTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Siempre Natural")
+        self.assertContains(
+            response,
+            f'href="{settings.FRONTEND_BASE_URL.rstrip("/")}/"',
+        )
         self.assertContains(response, "admin/css/siempre-natural.css")
 
 

@@ -130,15 +130,21 @@ class ProductAdmin(admin.ModelAdmin):
         form = SpreadsheetUploadForm(request.POST or None, request.FILES or None)
         if request.method == "POST" and form.is_valid():
             try:
-                counts = import_price_cost_workbook(form.cleaned_data["workbook"])
+                counts = import_price_cost_workbook(
+                    form.cleaned_data["workbook"],
+                    can_add_products=request.user.has_perm("catalog.add_product"),
+                    can_add_categories=request.user.has_perm("catalog.add_category"),
+                )
             except SpreadsheetImportError as exc:
                 form.add_error("workbook", str(exc))
             else:
                 messages.success(
                     request,
                     (
-                        f"Planilla aplicada: {counts['products_updated']} precios "
-                        f"y {counts['purchases_updated']} compras actualizados."
+                        f"Planilla aplicada: {counts['products_updated']} productos "
+                        f"actualizados, {counts['products_created']} nuevos, "
+                        f"{counts['products_deactivated']} desactivados y "
+                        f"{counts['purchases_updated']} compras actualizadas."
                     ),
                 )
                 return redirect("admin:catalog_product_spreadsheet")

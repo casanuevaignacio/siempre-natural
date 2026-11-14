@@ -188,6 +188,14 @@ en la lista sin borrar sus registros ni afectar pedidos anteriores. El catálogo
 prioriza frutos secos, frutos semi secos, semillas, cereales y condimentos; las
 demás categorías y los productos se ordenan alfabéticamente.
 
+Desde **Catálogo → Productos → Planilla Excel de precios y costos** puedes
+editar nombres, identificadores, categorías, unidades, formatos, precios y
+costos. El ID identifica cada producto existente aunque cambien su nombre o
+identificador. Para agregar productos, añade una fila sin ID; la importación
+crea las categorías que aún no existan. Los productos que quites de la planilla
+se desactivan en la tienda, pero sus registros y su historial de compras y
+ventas se conservan.
+
 Las fotos de producto incluidas en `frontend\public\images\products` se asignan
 por slug en `frontend\src\components\ProductCard.tsx`. Si el producto tiene una
 imagen cargada desde Django Admin, esa imagen tiene prioridad. Para agregar una

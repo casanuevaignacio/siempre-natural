@@ -19,6 +19,7 @@ from .spreadsheets import (
     PRICE_SHEET,
     PURCHASE_SHEET,
     WORKBOOK_NAME,
+    _decimal,
     export_price_cost_workbook,
 )
 
@@ -82,6 +83,12 @@ class PriceCostSpreadsheetTests(TestCase):
             ),
         )
 
+    def test_integer_price_accepts_excel_decimal_format(self):
+        self.assertEqual(
+            _decimal(Decimal("1500.0"), "el precio de venta", 2, integer=True),
+            Decimal("1500"),
+        )
+
     def test_admin_can_download_template_edit_and_import_prices_and_costs(self):
         self.assertContains(
             self.client.get("/admin/"),
@@ -91,8 +98,8 @@ class PriceCostSpreadsheetTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         workbook = load_workbook(BytesIO(response.content))
-        workbook[PRICE_SHEET]["F2"] = 1500
-        workbook[PRICE_SHEET]["G2"] = 375
+        workbook[PRICE_SHEET]["F2"] = 1500.0
+        workbook[PRICE_SHEET]["G2"] = 375.0
         workbook[PRICE_SHEET]["H2"] = 700.5
         workbook[PURCHASE_SHEET]["G2"] = 900
         workbook[PURCHASE_SHEET]["H2"] = "Costo corregido"
@@ -110,6 +117,91 @@ class PriceCostSpreadsheetTests(TestCase):
         self.assertEqual(self.product.current_unit_cost, Decimal("700.5000"))
         self.assertEqual(self.purchase.total_cost, Decimal("900"))
         self.assertEqual(self.purchase.note, "Costo corregido")
+
+    def test_import_can_rename_product_without_breaking_purchase_history(self):
+        workbook = self._exported_workbook()
+        price_sheet = workbook[PRICE_SHEET]
+        price_sheet["B2"] = "producto renombrado"
+        price_sheet["C2"] = "Producto renombrado"
+
+        response = self.client.post(
+            "/admin/catalog/product/spreadsheet/",
+            {"workbook": self._uploaded_workbook(workbook)},
+        )
+
+        self.assertEqual(response.status_code, 302)
+        self.product.refresh_from_db()
+        self.purchase.refresh_from_db()
+        self.assertEqual(self.product.name, "Producto renombrado")
+        self.assertEqual(self.product.slug, "producto-renombrado")
+        self.assertEqual(self.purchase.product_id, self.product.pk)
+
+    def test_import_can_add_product_and_category_with_blank_id(self):
+        workbook = self._exported_workbook()
+        price_sheet = workbook[PRICE_SHEET]
+        price_sheet.append(
+            [
+                None,
+                None,
+                "Nuevo producto",
+                "Nueva categoría",
+                "Unidad",
+                1600,
+                None,
+                None,
+                "Frasco 250 g",
+            ]
+        )
+
+        response = self.client.post(
+            "/admin/catalog/product/spreadsheet/",
+            {"workbook": self._uploaded_workbook(workbook)},
+        )
+
+        self.assertEqual(response.status_code, 302)
+        new_product = Product.objects.get(slug="nuevo-producto")
+        self.assertEqual(new_product.category.name, "Nueva categoría")
+        self.assertEqual(new_product.sale_unit, Product.SaleUnit.UNIT)
+        self.assertEqual(new_product.package_label, "Frasco 250 g")
+        self.assertTrue(new_product.is_active)
+        self.assertTrue(new_product.is_available)
+
+    def test_omitted_products_are_deactivated_without_deleting_purchase_history(self):
+        omitted_product = Product.objects.create(
+            category=self.category,
+            name="Producto omitido",
+            slug="producto-omitido",
+            price=Decimal("2000"),
+            is_active=True,
+            is_available=True,
+        )
+        purchase = ProductPurchase.objects.create(
+            product=omitted_product,
+            purchased_on=date(2026, 11, 2),
+            purchase_unit=Product.SaleUnit.KILOGRAM,
+            quantity=Decimal("1"),
+            total_cost=Decimal("900"),
+        )
+        workbook = self._exported_workbook()
+        price_sheet = workbook[PRICE_SHEET]
+        omitted_row = next(
+            row
+            for row in range(2, price_sheet.max_row + 1)
+            if price_sheet.cell(row, 1).value == omitted_product.pk
+        )
+        price_sheet.delete_rows(omitted_row)
+
+        response = self.client.post(
+            "/admin/catalog/product/spreadsheet/",
+            {"workbook": self._uploaded_workbook(workbook)},
+        )
+
+        self.assertEqual(response.status_code, 302)
+        omitted_product.refresh_from_db()
+        self.assertFalse(omitted_product.is_active)
+        self.assertFalse(omitted_product.is_available)
+        self.assertEqual(purchase.product_id, omitted_product.pk)
+        self.assertTrue(ProductPurchase.objects.filter(pk=purchase.pk).exists())
 
     def test_invalid_workbook_does_not_partially_update_rows(self):
         second_product = Product.objects.create(
