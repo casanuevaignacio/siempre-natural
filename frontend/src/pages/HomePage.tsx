@@ -15,10 +15,16 @@ const emptyConfig: StoreConfig = {
 
 const bulkSlides = [
   {
-    src: "/images/despensa-natural.webp",
+    src: "/images/energia-natural.webp",
     alt: "Selección de productos naturales a granel",
     title: "Natural en cada detalle",
     description: "Ingredientes para acompañar tus recetas de todos los días.",
+  },
+  {
+    src: "/images/vida-sana-inicio.webp",
+    alt: "Vida sana en un entorno natural con alimentos a granel",
+    title: "Bienestar natural",
+    description: "Alimentación consciente, productos naturales y cuidado del planeta.",
   },
   {
     src: "/images/products/almendras.jpg",
@@ -63,6 +69,21 @@ const bulkSlides = [
     description: "Acompaña tu día con una taza de algo especial.",
   },
 ];
+
+const categoryProductImages: Record<string, string> = {
+  "abarrotes-y-otros": "/images/products/tomate-deshidratado.jpg",
+  aceites: "/images/despensa-completa.webp",
+  "cafe-te-y-especias": "/images/products/te-chai.jpg",
+  cereales: "/images/products/quinoa.jpg",
+  "chocolate-vegano-y-mas": "/images/products/caju.jpg",
+  condimentos: "/images/products/canela-rama.jpg",
+  endulzantes: "/images/products/datiles.jpg",
+  "frutos-secos": "/images/products/almendras.jpg",
+  "frutos-semisecos": "/images/products/datiles.jpg",
+  harinas: "/images/products/avena.jpg",
+  legumbres: "/images/products/garbanzos.jpg",
+  semillas: "/images/products/sesamo.jpg",
+};
 
 export function HomePage() {
   const [config, setConfig] = useState(emptyConfig);
@@ -149,7 +170,7 @@ export function HomePage() {
           >
             <img
               alt={currentSlide.alt}
-              className="bulk-showcase-image"
+              className={`bulk-showcase-image${currentSlide.src === "/images/energia-natural.webp" ? " bulk-showcase-image-climber" : ""}`}
               key={currentSlide.src}
               onError={(event) => {
                 const image = event.currentTarget;
@@ -254,6 +275,15 @@ export function HomePage() {
                 key={category.id}
                 to={`/catalogo?categoria=${encodeURIComponent(category.slug)}`}
               >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  className="category-card-image"
+                  onError={(event) => {
+                    event.currentTarget.src = "/images/despensa-natural.webp";
+                  }}
+                  src={categoryProductImages[category.slug] || "/images/despensa-natural.webp"}
+                />
                 <span aria-hidden="true" className="category-card-icon">✳</span>
                 <span className="category-card-name">{category.name}</span>
                 <span className="category-card-description">
@@ -279,23 +309,23 @@ export function HomePage() {
           </p>
         </div>
         <div className="impact-grid">
-          <article className="impact-card impact-card-green">
-            <span aria-hidden="true" className="impact-icon">✳</span>
-            <span className="impact-step">01 · COMPRA CONSCIENTE</span>
-            <h3>Compra a granel</h3>
-            <p>Elige la cantidad que necesitas y disfruta productos naturales a tu medida.</p>
+          <article className="impact-card" aria-label="Compra consciente">
+            <img
+              alt="Compra consciente: compra a granel y elige la cantidad que necesitas"
+              src="/images/impact-compra.webp"
+            />
           </article>
-          <article className="impact-card impact-card-lime">
-            <span aria-hidden="true" className="impact-icon">↻</span>
-            <span className="impact-step">02 · REUTILIZA</span>
-            <h3>Menos plástico, más vida</h3>
-            <p>Cuando puedas, prefiere envases reutilizables para tus compras cotidianas.</p>
+          <article className="impact-card" aria-label="Reutiliza">
+            <img
+              alt="Reutiliza: menos plástico y más vida con envases reutilizables"
+              src="/images/impact-reutiliza.webp"
+            />
           </article>
-          <article className="impact-card impact-card-cream">
-            <span aria-hidden="true" className="impact-icon">♻</span>
-            <span className="impact-step">03 · RECICLA</span>
-            <h3>Un ciclo más natural</h3>
-            <p>Separa y recicla los envases que uses según las opciones de tu comunidad.</p>
+          <article className="impact-card" aria-label="Recicla">
+            <img
+              alt="Recicla: separa y recicla los envases según las opciones de tu comunidad"
+              src="/images/impact-recicla.webp"
+            />
           </article>
         </div>
       </section>

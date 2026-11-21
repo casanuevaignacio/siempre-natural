@@ -159,6 +159,49 @@ def _rows_for_sheet(sheet, headers, *, legacy_headers=None):
     actual_headers = tuple(cell.value for cell in sheet[1])
     while actual_headers and actual_headers[-1] is None:
         actual_headers = actual_headers[:-1]
+    if actual_headers != headers and actual_headers != legacy_headers and len(actual_headers) >= 8:
+        price_core_headers = (
+            "ID producto",
+            "Identificador",
+            "Producto",
+            "Categoría",
+            "Unidad de venta",
+            "Precio venta (CLP)",
+            "Precio desde 250 g (CLP)",
+            "Costo actual por kg/unidad (CLP)",
+        )
+        if tuple(actual_headers[:8]) == price_core_headers or (
+            actual_headers[0] == "ID producto"
+            and actual_headers[1] == "Identificador"
+            and actual_headers[2] == "Producto"
+            and actual_headers[4] == "Unidad de venta"
+            and actual_headers[5] == "Precio venta (CLP)"
+            and actual_headers[6] == "Precio desde 250 g (CLP)"
+            and actual_headers[7] == "Costo actual por kg/unidad (CLP)"
+        ):
+            actual_headers = (*PRICE_HEADERS[:8], "Formato de presentación")
+            row_headers = actual_headers
+            rows = []
+            for row_number, values in enumerate(
+                sheet.iter_rows(min_row=2, values_only=True),
+                start=2,
+            ):
+                if not any(value is not None for value in values):
+                    continue
+                core_values = values[:8]
+                if isinstance(core_values[5], str) and core_values[5].strip().upper().startswith("NO"):
+                    core_values = (*core_values[:5], None, *core_values[6:])
+                if isinstance(core_values[6], str) and core_values[6].strip().upper().startswith("NO"):
+                    core_values = (*core_values[:6], None, *core_values[7:])
+                if isinstance(core_values[7], str):
+                    stripped_cost = core_values[7].strip().upper()
+                    if stripped_cost.startswith(("NO", "#")):
+                        core_values = (*core_values[:7], None)
+                row = dict(zip(row_headers[:8], core_values))
+                format_value = values[8] if len(actual_headers) > 8 and actual_headers[8] == "Formato de presentación" else ""
+                row["Formato de presentación"] = format_value or ""
+                rows.append((row_number, row))
+            return rows
     if actual_headers != headers and actual_headers != legacy_headers:
         raise SpreadsheetImportError(
             f"Las columnas de la hoja {sheet.title!r} no coinciden con la plantilla."
@@ -256,17 +299,27 @@ def import_price_cost_workbook(
 ):
     workbook = _validate_workbook_file(uploaded_file)
     required_sheets = {PRICE_SHEET, PURCHASE_SHEET, INSTRUCTIONS_SHEET}
-    if not required_sheets.issubset(workbook.sheetnames):
+    single_price_sheet = (
+        len(workbook.sheetnames) == 1
+        and tuple(cell.value for cell in workbook.active[1])[:8]
+        == PRICE_HEADERS[:8]
+    )
+    if not required_sheets.issubset(workbook.sheetnames) and not single_price_sheet:
         raise SpreadsheetImportError(
             "El archivo debe ser la plantilla descargada desde Gestión de precios y costos."
         )
 
+    price_sheet = workbook[PRICE_SHEET] if PRICE_SHEET in workbook.sheetnames else workbook.active
     price_rows = _rows_for_sheet(
-        workbook[PRICE_SHEET],
+        price_sheet,
         PRICE_HEADERS,
         legacy_headers=LEGACY_PRICE_HEADERS,
     )
-    purchase_rows = _rows_for_sheet(workbook[PURCHASE_SHEET], PURCHASE_HEADERS)
+    purchase_rows = (
+        _rows_for_sheet(workbook[PURCHASE_SHEET], PURCHASE_HEADERS)
+        if PURCHASE_SHEET in workbook.sheetnames
+        else []
+    )
     products = {product.pk: product for product in Product.objects.select_related("category")}
     categories = {
         category.name.strip().casefold(): category
@@ -429,6 +482,8 @@ def import_price_cost_workbook(
             product.is_available = bool(price)
             product_creations.append(product)
         else:
+            product.is_active = bool(price)
+            product.is_available = bool(price)
             product_updates.append(product)
 
     for row_number, row in purchase_rows:
@@ -488,6 +543,8 @@ def import_price_cost_workbook(
             "price",
             "price_250g",
             "current_unit_cost",
+            "is_active",
+            "is_available",
         ),
     )
     ProductPurchase.objects.bulk_update(

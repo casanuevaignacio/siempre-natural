@@ -9,7 +9,7 @@ from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.core.management import call_command
 from django.test import TestCase, override_settings
-from openpyxl import load_workbook
+from openpyxl import Workbook, load_workbook
 from rest_framework.test import APIClient
 
 from .admin import ProductAdmin
@@ -88,6 +88,49 @@ class PriceCostSpreadsheetTests(TestCase):
             _decimal(Decimal("1500.0"), "el precio de venta", 2, integer=True),
             Decimal("1500"),
         )
+
+    def test_import_accepts_single_sheet_variant_and_unavailable_markers(self):
+        workbook = Workbook()
+        sheet = workbook.active
+        sheet.title = "Hoja 1"
+        sheet.append(
+            (
+                "ID producto",
+                "Identificador",
+                "Producto",
+                "Categoría",
+                "Unidad de venta",
+                "Precio venta (CLP)",
+                "Precio desde 250 g (CLP)",
+                "Costo actual por kg/unidad (CLP)",
+                "UTILIDADES PRECIO KILO",
+            )
+        )
+        sheet.append(
+            (
+                self.product.pk,
+                self.product.slug,
+                self.product.name,
+                self.category.name,
+                "Kilogramo",
+                "NO DISPONIBLE",
+                None,
+                "#VALUE!",
+                0,
+            )
+        )
+
+        response = self.client.post(
+            "/admin/catalog/product/spreadsheet/",
+            {"workbook": self._uploaded_workbook(workbook)},
+        )
+
+        self.assertEqual(response.status_code, 302)
+        self.product.refresh_from_db()
+        self.assertIsNone(self.product.price)
+        self.assertIsNone(self.product.price_250g)
+        self.assertIsNone(self.product.current_unit_cost)
+        self.assertFalse(self.product.is_active)
 
     def test_admin_can_download_template_edit_and_import_prices_and_costs(self):
         self.assertContains(

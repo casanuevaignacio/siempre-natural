@@ -59,7 +59,7 @@ export function ProductCard({ product }: { product: Product }) {
   const validQuantity =
     Number.isSafeInteger(quantityNumber) && quantityNumber >= minimum;
   const categoryImage: Record<string, string> = {
-    aceites: "/images/producto-aceites-dulces.svg",
+    aceites: "/images/despensa-completa.webp",
     endulzantes: "/images/producto-aceites-dulces.svg",
     "banados-en-chocolate-vegano": "/images/producto-chocolate.svg",
     "chocolate-vegano-y-mas": "/images/producto-chocolate.svg",
@@ -73,7 +73,7 @@ export function ProductCard({ product }: { product: Product }) {
     harinas: "/images/producto-especias-cereales.svg",
   };
   const placeholderImage =
-    categoryImage[product.category.slug] ?? "/images/productos-organicos.svg";
+    categoryImage[product.category.slug] ?? "/images/despensa-completa.webp";
   const image = product.image_url || productImages[product.slug];
 
   function addProduct() {
@@ -87,7 +87,15 @@ export function ProductCard({ product }: { product: Product }) {
     <article className="product-card">
       <div className="product-image">
         {image ? (
-          <img src={image} alt={product.name} loading="lazy" />
+          <img
+            src={image}
+            alt={product.name}
+            loading="lazy"
+            onError={(event) => {
+              event.currentTarget.onerror = null;
+              event.currentTarget.src = "/images/despensa-completa.webp";
+            }}
+          />
         ) : (
           <img
             alt=""

@@ -855,6 +855,36 @@ body {
   transition: transform .22s, box-shadow .22s;
 }
 
+.category-card-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.82) contrast(.96);
+  transition: transform .35s ease, filter .35s ease;
+}
+
+.category-card::before {
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(17, 55, 33, .08) 8%, rgba(17, 55, 33, .82) 100%);
+  border: 0;
+  box-shadow: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  border-radius: inherit;
+}
+
+.category-card:hover .category-card-image {
+  transform: scale(1.045);
+  filter: saturate(.95) contrast(1);
+}
+
 .category-card::before,
 .category-card::after {
   position: absolute;
@@ -989,15 +1019,26 @@ body {
 .impact-card {
   position: relative;
   display: flex;
-  min-height: 258px;
+  aspect-ratio: 455 / 768;
   flex-direction: column;
   align-items: flex-start;
   overflow: hidden;
-  padding: 25px;
+  padding: 0;
   border: 1px solid rgba(255,255,255,.78);
   border-radius: 23px;
   box-shadow: 0 18px 38px -30px rgba(31,75,49,.4);
   transition: transform .22s, box-shadow .22s;
+}
+
+.impact-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.impact-card:nth-child(1) img {
+  object-position: 50% 0;
 }
 
 .impact-card:hover {
@@ -1006,16 +1047,7 @@ body {
 }
 
 .impact-card::after {
-  position: absolute;
-  right: -45px;
-  bottom: -66px;
-  width: 190px;
-  height: 190px;
-  border: 1px solid rgba(255,255,255,.32);
-  border-radius: 50%;
-  box-shadow: 0 0 0 22px rgba(255,255,255,.1), 0 0 0 45px rgba(255,255,255,.07);
-  content: "";
-  pointer-events: none;
+  content: none;
 }
 
 .impact-card-green {
@@ -1088,7 +1120,7 @@ body {
   .category-carousel { gap: 12px; margin-inline: -3px; }
   .category-card { flex-basis: min(74vw, 270px); min-height: 162px; }
   .impact-grid { grid-template-columns: 1fr; gap: 13px; }
-  .impact-card { min-height: 220px; padding: 22px; }
+  .impact-card { min-height: 0; aspect-ratio: 455 / 768; padding: 0; }
   .impact-icon { margin-bottom: 16px; }
 }
 
@@ -1136,8 +1168,15 @@ body {
 }
 
 .bulk-showcase-image {
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center top;
+  background: #dcebd8;
   animation: bulk-image-enter .55s ease both;
+}
+
+.bulk-showcase-image-climber {
+  object-fit: cover;
+  object-position: center top;
 }
 
 .bulk-showcase-shade {
