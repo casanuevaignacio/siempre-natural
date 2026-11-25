@@ -89,11 +89,17 @@ class WholesaleLogoutView(APIView):
 
 class WholesalePriceViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = WholesalePriceSerializer
-    permission_classes = [ApprovedWholesalePermission]
+    permission_classes = [AllowAny]
     queryset = WholesalePrice.objects.select_related(
         "product",
         "product__category",
-    ).order_by("product__category__name", "product__name")
+    ).filter(
+        price_list="Lista mayorista 2026 (PDF proporcionado)",
+    ).order_by(
+        "product__category__sort_order",
+        "product__category__name",
+        "product__name",
+    )
 
 
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):

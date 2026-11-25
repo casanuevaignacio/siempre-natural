@@ -40,7 +40,18 @@ class CategoryAdmin(admin.ModelAdmin):
 class WholesalePriceInline(admin.TabularInline):
     model = WholesalePrice
     extra = 0
-    fields = ("price_list", "price", "price_unit", "package_label")
+    fields = (
+        "price_list",
+        "name_override",
+        "price",
+        "price_250g",
+        "price_5kg",
+        "price_10kg",
+        "closed_price",
+        "closed_format",
+        "price_unit",
+        "package_label",
+    )
     ordering = ("price_list",)
 
 
@@ -165,7 +176,18 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(WholesalePrice)
 class WholesalePriceAdmin(admin.ModelAdmin):
-    list_display = ("product", "price_list", "price", "price_unit", "package_label")
+    list_display = (
+        "product",
+        "price_list",
+        "price",
+        "price_250g",
+        "price_5kg",
+        "price_10kg",
+        "closed_price",
+        "closed_format",
+        "price_unit",
+        "package_label",
+    )
     list_filter = ("price_list", "price_unit", "product__category")
     search_fields = ("product__name", "product__category__name", "price_list")
     autocomplete_fields = ("product",)

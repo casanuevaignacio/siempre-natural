@@ -283,18 +283,25 @@ export function CustomerAccountPage() {
 
   if (loading) {
     return (
-      <main className="page-main">
-        <section className="container"><p>Consultando tu cuenta…</p></section>
+      <main className="page-main account-page">
+        <section className="container account-loading"><span className="account-hero-kicker">Siempre Natural</span><p>Consultando tu cuenta…</p></section>
       </main>
     );
   }
 
   return (
-    <main className="page-main">
-      <section className="container page-heading">
-        <span className="section-kicker">Siempre Natural</span>
-        <h1>Mi cuenta</h1>
-        <p>Accede a tu historial de pedidos y administra tus datos.</p>
+    <main className="page-main account-page">
+      <section className="container account-hero" aria-labelledby="account-title">
+        <div>
+          <span className="account-hero-kicker">Tu espacio personal</span>
+          <h1 id="account-title">Tu cuenta, a tu manera.</h1>
+          <p>Consulta tus compras, mantén tus datos al día y vuelve a elegir tus favoritos cuando quieras.</p>
+        </div>
+        <aside className="account-hero-card">
+          <span className="account-hero-mark" aria-hidden="true">✳</span>
+          <strong>Siempre Natural</strong>
+          <span>Todo lo importante de tus compras, en un solo lugar.</span>
+        </aside>
       </section>
 
       <section className="container account-content">

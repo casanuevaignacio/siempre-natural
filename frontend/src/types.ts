@@ -39,8 +39,14 @@ export interface WholesalePrice {
   id: number;
   product_name: string;
   category_name: string;
+  category_sort_order: number;
   price_list: string;
-  price: string;
+  price: string | null;
+  price_250g: string | null;
+  price_5kg: string | null;
+  price_10kg: string | null;
+  closed_price: string | null;
+  closed_format: string;
   price_unit: "kg" | "package";
   package_label: string;
 }

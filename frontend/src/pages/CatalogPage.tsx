@@ -47,11 +47,19 @@ export function CatalogPage() {
     .filter((group) => group.products.length > 0);
 
   return (
-    <main className="page-main">
-      <section className="container page-heading">
-        <span className="section-kicker">Descubre lo que tenemos</span>
-        <h1>Nuestro catálogo</h1>
-        <p>Productos disponibles y precios confirmados por la tienda.</p>
+    <main className="page-main catalog-page">
+      <section className="container catalog-hero" aria-labelledby="catalog-title">
+        <div className="catalog-hero-copy">
+          <span className="catalog-hero-kicker">Despensa natural · compra consciente</span>
+          <h1 id="catalog-title">Encuentra tus favoritos.</h1>
+          <p>Explora alimentos de calidad para una vida más natural. Filtra por categoría o busca directamente lo que necesitas.</p>
+        </div>
+        <div className="catalog-hero-card" aria-label={`${products.length} productos en ${categories.length} categorías`}>
+          <span className="catalog-hero-mark" aria-hidden="true">✳</span>
+          <strong>{products.length}</strong>
+          <span>productos disponibles</span>
+          <div><b>{categories.length}</b> categorías para explorar</div>
+        </div>
       </section>
       <section className="container catalog-content">
         <div className="catalog-tools">

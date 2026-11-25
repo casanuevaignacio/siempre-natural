@@ -33,7 +33,12 @@ body {
 }
 
 #header {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  justify-content: stretch;
   min-height: 82px;
+  height: auto;
   box-sizing: border-box;
   padding: 12px 28px;
   background: #294631;
@@ -42,14 +47,21 @@ body {
 
 #branding {
   display: flex;
+  flex: none;
   align-items: center;
+  justify-content: flex-start !important;
+  justify-self: start;
   min-height: 56px;
+  min-width: 0;
+  width: auto !important;
 }
 
 .brand-lockup {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 12px;
+  text-align: left;
 }
 
 .brand-logo {
@@ -85,17 +97,72 @@ body {
 }
 
 #user-tools {
-  padding-top: 6px;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: flex-end;
+  justify-self: end;
+  gap: 12px;
+  width: auto;
+  margin: 0 !important;
+  padding: 0;
   color: #edf0e7;
   font-size: 12px;
+  text-align: right;
 }
 
-#user-tools a:link,
-#user-tools a:visited {
+.admin-userlinks {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-userlink,
+.admin-userlink:link,
+.admin-userlink:visited {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 7px 10px;
+  border: 1px solid rgb(255 253 246 / 35%) !important;
+  border-radius: 7px;
   color: #fffdf6;
+  background: transparent;
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
-#user-tools a:hover {
+.admin-userlink:hover,
+.admin-userlink:focus-visible {
+  border-color: #e7d28f !important;
+  color: #fffdf6;
+  background: rgb(255 255 255 / 10%);
+  text-decoration: none;
+}
+
+.admin-userlinks #logout-form {
+  display: inline-flex;
+  margin: 0;
+}
+
+#user-tools .admin-userlink.admin-logout {
+  border-bottom: 1px solid rgb(255 253 246 / 35%);
+  text-transform: none;
+}
+
+#user-tools .admin-userlink.admin-logout:hover,
+#user-tools .admin-userlink.admin-logout:focus-visible {
+  border-bottom-color: #e7d28f;
   color: #e7d28f;
 }
 
@@ -442,13 +509,44 @@ body.login {
 
 @media (max-width: 767px) {
   #header {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    justify-content: stretch;
+    gap: 12px;
+    height: auto;
+    min-height: 0;
     padding: 10px 15px;
+    background: #294631;
+  }
+
+  #branding {
+    justify-self: start;
+    min-height: 52px;
   }
 
   #user-tools {
-    float: none;
-    margin: 10px 0 0;
-    padding: 0;
+    display: block;
+    justify-self: start;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 2px;
+    color: #edf0e7;
+    text-align: left;
+  }
+
+  .admin-userlinks {
+    justify-content: flex-start;
+    gap: 7px;
+  }
+
+  .admin-userlink,
+  .admin-userlink:link,
+  .admin-userlink:visited {
+    min-height: 36px;
+    padding: 8px 10px;
+    border-color: rgb(255 253 246 / 45%) !important;
+    background: rgb(255 253 246 / 8%);
   }
 
   #content {

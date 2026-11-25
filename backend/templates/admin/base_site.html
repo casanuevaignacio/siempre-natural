@@ -1,9 +1,9 @@
 {% extends "admin/base_site.html" %}
 {% load static %}
 
-{% block extrastyle %}
+{% block responsive %}
   {{ block.super }}
-  <link rel="stylesheet" href="{% static 'admin/css/siempre-natural.css' %}">
+  <link rel="stylesheet" href="{% static 'admin/css/siempre-natural.css' %}?v=4">
 {% endblock %}
 
 {% block branding %}
@@ -13,6 +13,20 @@
       <h1 id="site-name"><a href="{% url 'admin:index' %}">Siempre Natural</a></h1>
       <p class="brand-subtitle">Panel de administración</p>
     </div>
+  </div>
+{% endblock %}
+
+{% block welcome-msg %}{% endblock %}
+
+{% block userlinks %}
+  <div class="admin-userlinks">
+    {% if site_url %}<a class="admin-userlink" href="{{ site_url }}">Ver el sitio</a>{% endif %}
+    {% if user.has_usable_password %}<a class="admin-userlink" href="{% url 'admin:password_change' %}">Cambiar contraseña</a>{% endif %}
+    <form id="logout-form" method="post" action="{% url 'admin:logout' %}">
+      {% csrf_token %}
+      <button class="admin-userlink admin-logout" type="submit">Cerrar sesión</button>
+    </form>
+    {% include "admin/color_theme_toggle.html" %}
   </div>
 {% endblock %}
 

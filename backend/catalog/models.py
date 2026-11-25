@@ -156,7 +156,46 @@ class WholesalePrice(models.Model):
         "precio mayorista en CLP",
         max_digits=12,
         decimal_places=0,
+        blank=True,
+        null=True,
         validators=[MinValueValidator(Decimal("1"))],
+    )
+    price_250g = models.DecimalField(
+        "precio desde 250 g",
+        max_digits=12,
+        decimal_places=0,
+        blank=True,
+        null=True,
+        validators=[MinValueValidator(Decimal("1"))],
+    )
+    price_5kg = models.DecimalField(
+        "precio por kg desde 5 kg",
+        max_digits=12,
+        decimal_places=0,
+        blank=True,
+        null=True,
+        validators=[MinValueValidator(Decimal("1"))],
+    )
+    price_10kg = models.DecimalField(
+        "precio por kg desde 10 kg",
+        max_digits=12,
+        decimal_places=0,
+        blank=True,
+        null=True,
+        validators=[MinValueValidator(Decimal("1"))],
+    )
+    closed_price = models.DecimalField(
+        "precio por kg o unidad en formato cerrado",
+        max_digits=12,
+        decimal_places=0,
+        blank=True,
+        null=True,
+        validators=[MinValueValidator(Decimal("1"))],
+    )
+    closed_format = models.CharField(
+        "cantidad del formato cerrado",
+        max_length=64,
+        blank=True,
     )
     price_unit = models.CharField(
         "unidad del precio",
@@ -166,6 +205,11 @@ class WholesalePrice(models.Model):
     package_label = models.CharField(
         "formato del envase",
         max_length=64,
+        blank=True,
+    )
+    name_override = models.CharField(
+        "nombre en la lista",
+        max_length=160,
         blank=True,
     )
 
@@ -182,18 +226,30 @@ class WholesalePrice(models.Model):
 
     def clean(self):
         super().clean()
-        if self.price_unit == self.PriceUnit.PACKAGE and not self.package_label.strip():
+        if (
+            self.price is not None
+            and self.price_unit == self.PriceUnit.PACKAGE
+            and not self.package_label.strip()
+        ):
             raise ValidationError(
                 {"package_label": "Indica el formato que aparece en la lista."}
             )
-        if self.price_unit == self.PriceUnit.KILOGRAM and self.package_label:
+        if (
+            self.price is not None
+            and self.price_unit == self.PriceUnit.KILOGRAM
+            and self.package_label
+        ):
             raise ValidationError(
                 {"package_label": "Un precio por kilogramo no lleva formato de envase."}
+            )
+        if bool(self.closed_price) != bool(self.closed_format.strip()):
+            raise ValidationError(
+                {"closed_format": "El precio y el contenido del formato cerrado deben ir juntos."}
             )
 
     def __str__(self):
         unit = self.package_label or "kg"
-        return f"{self.product.name}: ${self.price}/{unit}"
+        return f"{self.product.name}: ${self.price or 'Sin precio'}/{unit}"
 
 
 class ProductPurchase(models.Model):

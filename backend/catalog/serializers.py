@@ -39,11 +39,18 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class WholesalePriceSerializer(serializers.ModelSerializer):
-    product_name = serializers.CharField(source="product.name", read_only=True)
+    product_name = serializers.SerializerMethodField()
     category_name = serializers.CharField(
         source="product.category.name",
         read_only=True,
     )
+    category_sort_order = serializers.IntegerField(
+        source="product.category.sort_order",
+        read_only=True,
+    )
+
+    def get_product_name(self, obj):
+        return obj.name_override or obj.product.name
 
     class Meta:
         model = WholesalePrice
@@ -51,8 +58,14 @@ class WholesalePriceSerializer(serializers.ModelSerializer):
             "id",
             "product_name",
             "category_name",
+            "category_sort_order",
             "price_list",
             "price",
+            "price_250g",
+            "price_5kg",
+            "price_10kg",
+            "closed_price",
+            "closed_format",
             "price_unit",
             "package_label",
         )
