@@ -1,8 +1,8 @@
 # Siempre Natural
 
-Tienda web local en español para administrar un catálogo y registrar pedidos sin
-pagos en línea. El catálogo parte vacío: agrega productos y precios reales desde
-Django Admin antes de publicarlos.
+Tienda web para administrar un catálogo y registrar pedidos sin pagos en línea.
+En una instalación local nueva, agrega productos y precios desde Django Admin;
+el blueprint de Render incluye un catálogo público inicial para el primer deploy.
 
 ## Requisitos
 
@@ -126,41 +126,23 @@ confirmación al correo. Si el cliente elimina la cuenta, los datos personales
 de sus pedidos se anonimizan y se conservan los importes, productos y estados.
 La API solo devuelve productos activos y disponibles. El precio y total del
 pedido se calculan en el servidor a partir de los precios vigentes al registrar
-la solicitud. La sección privada usa `GET /api/wholesale/session/` para consultar
-el estado de acceso, `POST /api/wholesale/login/` y
-`POST /api/wholesale/logout/` para gestionar la sesión, y
-`GET /api/wholesale/prices/` para consultar la tarifa únicamente con una sesión
-de administrador o una cuenta del grupo **Mayoristas aprobados**.
+la solicitud. `GET /api/wholesale/prices/` publica la lista mayorista vigente.
+Las operaciones administrativas y los datos de clientes siguen protegidos.
 
 ## Lista mayorista
 
-La tarifa mayorista se conserva separada de los precios minoristas. El CSV con
-los precios reales está excluido de GitHub porque contiene información
-comercial privada. Conserva una copia segura local y cópiala a
-`backend\catalog\data\lista_mayorista_2026.csv` antes de importar. También
-puedes indicar una ruta local explícita:
+La tarifa mayorista se conserva separada de los precios minoristas. El Excel con
+la tarifa vigente se importa con el comando:
 
 ```powershell
 Set-Location backend
-python manage.py load_wholesale_prices --csv "C:\ruta-privada\lista_mayorista_2026.csv"
+python manage.py load_wholesale_workbook --xlsx "C:\ruta\precios-mayorista.xlsx"
 ```
 
-La tarifa se consulta en la sección **Mayoristas** de la tienda, con una cuenta
-habilitada, y también desde Django Admin. Los productos mayoristas se mantienen
-inactivos, sin precio minorista ni disponibilidad; no aparecen en el catálogo
-público ni se pueden incluir en pedidos minoristas. El comando puede ejecutarse
-nuevamente sin duplicar registros. Cuatro importes del PDF no tienen producto
-asociado ($5.500, $11.000, $23.000 y $24.000), así que no se cargan sin confirmar
-a qué productos corresponden. Esta lista no define mínimos de compra,
-descuentos por volumen ni vigencia más allá de la etiqueta 2026 del documento.
-
-Para autorizar a un comprador, entra a **Administración → Usuarios**, crea o
-abre su cuenta y agrégala al grupo **Mayoristas aprobados**. La cuenta debe estar
-activa y tener una contraseña establecida. Comparte con el cliente el nombre de
-usuario y la contraseña de forma privada; la página **Mayoristas** permite
-iniciar sesión y ver los precios, pero no ofrece registro público. Quitar al
-usuario del grupo revoca el acceso. El catálogo mayorista es solo de consulta:
-disponibilidad, cantidades y condiciones de compra se confirman con la tienda.
+La tarifa aparece en la sección pública **Mayoristas** y también se administra
+desde Django Admin. Los precios de esta lista son visibles para cualquier
+visitante. Los productos y costos internos no se publican en esa página.
+Disponibilidad, cantidades y condiciones de compra se confirman con la tienda.
 
 ## Lista normal de precios
 
@@ -240,11 +222,46 @@ Set-Location ..\frontend
 npm run build
 ```
 
+## Despliegue público en Render
+
+El archivo `render.yaml` crea un servicio Docker con frontend React y backend
+Django en el mismo dominio, más una base PostgreSQL. En la primera puesta en
+marcha ejecuta migraciones, carga un catálogo público inicial si la base está
+vacía y crea el usuario administrador indicado en las variables de entorno.
+El fixture incluye categorías, productos y precios publicados; excluye costos
+internos, compras, pedidos y cuentas de clientes. Las fotos del sitio viajan en
+el frontend. La carga de fotos desde Admin permanece desactivada en producción.
+
+Para publicarla:
+
+1. Sube este repositorio a GitHub.
+2. En Render, elige **New → Blueprint**, conecta el repositorio y aplica el
+   `render.yaml` de la raíz.
+3. Cuando Render lo solicite, configura un usuario, correo y contraseña únicos
+   para `DJANGO_BOOTSTRAP_ADMIN_USERNAME`, `DJANGO_BOOTSTRAP_ADMIN_EMAIL` y
+   `DJANGO_BOOTSTRAP_ADMIN_PASSWORD`. Ingresa el número comercial de WhatsApp
+   internacional en `WHATSAPP_BUSINESS_NUMBER`.
+4. Al terminar el deploy, abre el dominio del servicio; el Admin queda en
+   `/admin/`.
+
+El blueprint usa planes gratuitos para facilitar una primera prueba. Render
+apaga el servicio web gratuito tras 15 minutos sin tráfico y la base PostgreSQL
+gratuita vence a los 30 días; luego de otros 14 días puede eliminarse junto con
+los datos. Antes de recibir pedidos reales, cambia la base a un plan pagado y
+mantén respaldos. Consulta las [limitaciones de Render Free](https://render.com/docs/free).
+
+El frontend y Django comparten origen para que carrito, pedidos y sesiones
+funcionen sin cookies de terceros. Si agregas un dominio propio, actualiza
+`DJANGO_ALLOWED_HOSTS`, `DJANGO_CORS_ALLOWED_ORIGINS`,
+`DJANGO_CSRF_TRUSTED_ORIGINS` y `FRONTEND_BASE_URL` en Render. Para verificación
+de cuentas, recuperación de contraseñas y avisos por correo, configura SMTP en
+las variables `EMAIL_*`; sin SMTP, esas notificaciones no se envían.
+
 ## Antes de producción
 
 En la plataforma de alojamiento, configura las variables como secretos o
 variables privadas; no subas `.env`. Usa una `DJANGO_SECRET_KEY` aleatoria y
-exclusiva para producción (al menos 50 caracteres), `DJANGO_DEBUG=False`, y
+exclusiva para producción (al menos 43 caracteres), `DJANGO_DEBUG=False`, y
 establece `DJANGO_ALLOWED_HOSTS` con el dominio del backend. Configura
 `DJANGO_CORS_ALLOWED_ORIGINS` y `DJANGO_CSRF_TRUSTED_ORIGINS` con los orígenes
 HTTPS reales del frontend, y `DATABASE_URL` con la URL privada de PostgreSQL.

@@ -9,6 +9,7 @@ __pycache__/
 *.log
 media/
 staticfiles/
+/frontend-dist/
 # Listas comerciales privadas; conservar copias locales fuera de GitHub.
 backend/catalog/data/lista_mayorista_2026.csv
 backend/catalog/data/lista_precios_normal_2026.csv

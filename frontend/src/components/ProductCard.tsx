@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { formatCLP, minimumQuantity } from "../api";
 import { useCart } from "../cart/CartContext";
+import { publicAsset } from "../publicAsset";
 import type { Product } from "../types";
 
 const productImages: Record<string, string> = {
@@ -88,12 +89,12 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="product-image">
         {image ? (
           <img
-            src={image}
+            src={publicAsset(image)}
             alt={product.name}
             loading="lazy"
             onError={(event) => {
               event.currentTarget.onerror = null;
-              event.currentTarget.src = "/images/despensa-completa.webp";
+              event.currentTarget.src = publicAsset("/images/despensa-completa.webp");
             }}
           />
         ) : (
@@ -102,7 +103,7 @@ export function ProductCard({ product }: { product: Product }) {
             aria-hidden="true"
             className="product-placeholder-image"
             loading="lazy"
-            src={placeholderImage}
+            src={publicAsset(placeholderImage)}
           />
         )}
         <span className="product-category">{product.category.name}</span>

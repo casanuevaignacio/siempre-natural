@@ -1,0 +1,5633 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Condimentos",
+      "slug": "condimentos",
+      "description": "",
+      "is_active": true,
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Frutos Secos",
+      "slug": "frutos-secos",
+      "description": "",
+      "is_active": true,
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Frutos Semi Secos",
+      "slug": "frutos-semisecos",
+      "description": "",
+      "is_active": true,
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Semillas",
+      "slug": "semillas",
+      "description": "",
+      "is_active": true,
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Legumbres",
+      "slug": "legumbres",
+      "description": "",
+      "is_active": true,
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {
+      "name": "Cereales",
+      "slug": "cereales",
+      "description": "",
+      "is_active": true,
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 7,
+    "fields": {
+      "name": "Harinas",
+      "slug": "harinas",
+      "description": "",
+      "is_active": true,
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 8,
+    "fields": {
+      "name": "Café, Té y Especias",
+      "slug": "cafe-te-y-especias",
+      "description": "",
+      "is_active": true,
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 9,
+    "fields": {
+      "name": "Abarrotes y otros",
+      "slug": "abarrotes-y-otros",
+      "description": "",
+      "is_active": true,
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 10,
+    "fields": {
+      "name": "Endulzantes",
+      "slug": "endulzantes",
+      "description": "",
+      "is_active": true,
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 11,
+    "fields": {
+      "name": "Aceites",
+      "slug": "aceites",
+      "description": "",
+      "is_active": true,
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 12,
+    "fields": {
+      "name": "Chocolate vegano y más",
+      "slug": "chocolate-vegano-y-mas",
+      "description": "",
+      "is_active": true,
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 13,
+    "fields": {
+      "name": "Bañados en chocolate (vegano)",
+      "slug": "banados-en-chocolate-vegano",
+      "description": "",
+      "is_active": true,
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Orégano",
+      "slug": "oregano",
+      "description": "",
+      "image": "",
+      "price": "5000",
+      "price_250g": "1500",
+      "sale_unit": "kg",
+      "package_label": "=F67-H67",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.109Z",
+      "updated_at": "2026-10-29T02:35:44.017Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "name": "Cúrcuma",
+      "slug": "curcuma",
+      "description": "",
+      "image": "",
+      "price": "9000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F60-H60",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.111Z",
+      "updated_at": "2026-10-29T02:35:44.008Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "category": 1,
+      "name": "Comino polvo",
+      "slug": "comino-polvo",
+      "description": "",
+      "image": "",
+      "price": "4000",
+      "price_250g": "1200",
+      "sale_unit": "kg",
+      "package_label": "=F58-H58",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.112Z",
+      "updated_at": "2026-10-29T02:35:44.007Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "category": 1,
+      "name": "Aliño completo",
+      "slug": "alino-completo",
+      "description": "",
+      "image": "",
+      "price": "4000",
+      "price_250g": "1200",
+      "sale_unit": "kg",
+      "package_label": "=F56-H56",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.114Z",
+      "updated_at": "2026-10-29T02:35:44.006Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "category": 1,
+      "name": "Curry",
+      "slug": "curry",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": "2000",
+      "sale_unit": "kg",
+      "package_label": "=F59-H59",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.115Z",
+      "updated_at": "2026-10-29T02:35:44.010Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "category": 1,
+      "name": "Merquén ahumado",
+      "slug": "merquen",
+      "description": "",
+      "image": "",
+      "price": "9000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F64-H64",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.116Z",
+      "updated_at": "2026-10-29T02:35:44.012Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "category": 1,
+      "name": "Semilla de cilantro",
+      "slug": "semilla-de-cilantro",
+      "description": "",
+      "image": "",
+      "price": "5000",
+      "price_250g": "1500",
+      "sale_unit": "kg",
+      "package_label": "=F75-H75",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.117Z",
+      "updated_at": "2026-10-29T02:35:44.024Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "category": 1,
+      "name": "Semilla de comino",
+      "slug": "semilla-de-comino",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F76-H76",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.119Z",
+      "updated_at": "2026-10-29T02:35:44.025Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "category": 1,
+      "name": "Semillas de hinojo",
+      "slug": "semillas-de-hinojo",
+      "description": "",
+      "image": "",
+      "price": "10000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F77-H77",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.120Z",
+      "updated_at": "2026-10-29T02:35:44.025Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "category": 1,
+      "name": "Cebolla en polvo",
+      "slug": "cebolla-en-polvo",
+      "description": "",
+      "image": "",
+      "price": "9000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F57-H57",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.122Z",
+      "updated_at": "2026-10-29T02:35:44.006Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+      "category": 1,
+      "name": "Ajo en polvo",
+      "slug": "ajo-en-polvo",
+      "description": "",
+      "image": "",
+      "price": "4500",
+      "price_250g": "1500",
+      "sale_unit": "kg",
+      "package_label": "=F54-H54",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.124Z",
+      "updated_at": "2026-10-29T02:35:44.005Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "category": 1,
+      "name": "Ajo en escamas",
+      "slug": "ajo-en-escamas",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F53-H53",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.125Z",
+      "updated_at": "2026-10-29T02:35:44.005Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+      "category": 1,
+      "name": "Nuez moscada entera",
+      "slug": "nuez-moscada-entera",
+      "description": "",
+      "image": "",
+      "price": "35000",
+      "price_250g": "10000",
+      "sale_unit": "kg",
+      "package_label": "=F66-H66",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.126Z",
+      "updated_at": "2026-10-29T02:35:44.016Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+      "category": 1,
+      "name": "Jengibre en polvo",
+      "slug": "jengibre-en-polvo",
+      "description": "",
+      "image": "",
+      "price": "9000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F62-H62",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.128Z",
+      "updated_at": "2026-10-29T02:35:44.011Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 15,
+    "fields": {
+      "category": 1,
+      "name": "Pimentón paprika",
+      "slug": "pimenton-paprika",
+      "description": "",
+      "image": "",
+      "price": "5000",
+      "price_250g": "1500",
+      "sale_unit": "kg",
+      "package_label": "",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.130Z",
+      "updated_at": "2026-10-29T02:35:44.019Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 16,
+    "fields": {
+      "category": 1,
+      "name": "Tomillo seco",
+      "slug": "tomillo-seco",
+      "description": "",
+      "image": "",
+      "price": "13000",
+      "price_250g": "3500",
+      "sale_unit": "kg",
+      "package_label": "=F78-H78",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.132Z",
+      "updated_at": "2026-10-29T02:35:44.026Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 17,
+    "fields": {
+      "category": 1,
+      "name": "Romero seco",
+      "slug": "romero-seco",
+      "description": "",
+      "image": "",
+      "price": "19000",
+      "price_250g": "5000",
+      "sale_unit": "kg",
+      "package_label": "=F72-H72",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.133Z",
+      "updated_at": "2026-10-29T02:35:44.022Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 18,
+    "fields": {
+      "category": 1,
+      "name": "Laurel hoja",
+      "slug": "laurel-hoja",
+      "description": "",
+      "image": "",
+      "price": "25000",
+      "price_250g": "6500",
+      "sale_unit": "kg",
+      "package_label": "=F63-H63",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.134Z",
+      "updated_at": "2026-10-29T02:35:44.012Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 19,
+    "fields": {
+      "category": 1,
+      "name": "Eneldo",
+      "slug": "eneldo",
+      "description": "",
+      "image": "",
+      "price": "16000",
+      "price_250g": "4500",
+      "sale_unit": "kg",
+      "package_label": "=F61-H61",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.136Z",
+      "updated_at": "2026-10-29T02:35:44.010Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 20,
+    "fields": {
+      "category": 1,
+      "name": "Ají cacho de cabra",
+      "slug": "aji-cacho-de-cabra",
+      "description": "",
+      "image": "",
+      "price": "15000",
+      "price_250g": "4000",
+      "sale_unit": "kg",
+      "package_label": "=F55-H55",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.138Z",
+      "updated_at": "2026-10-29T02:35:44.004Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 21,
+    "fields": {
+      "category": 1,
+      "name": "Sal del Himalaya gruesa o fina",
+      "slug": "sal-del-himalaya",
+      "description": "",
+      "image": "",
+      "price": "3500",
+      "price_250g": "1000",
+      "sale_unit": "kg",
+      "package_label": "=F74-H74",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.140Z",
+      "updated_at": "2026-10-29T02:35:44.024Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 22,
+    "fields": {
+      "category": 1,
+      "name": "Sal de cahuil",
+      "slug": "sal-de-mar",
+      "description": "",
+      "image": "",
+      "price": "2000",
+      "price_250g": "600",
+      "sale_unit": "kg",
+      "package_label": "=F73-H73",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.142Z",
+      "updated_at": "2026-10-29T02:35:44.023Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 23,
+    "fields": {
+      "category": 1,
+      "name": "Pimienta entera negra",
+      "slug": "pimienta-entera-negra",
+      "description": "",
+      "image": "",
+      "price": "23000",
+      "price_250g": "6000",
+      "sale_unit": "kg",
+      "package_label": "=F70-H70",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.144Z",
+      "updated_at": "2026-10-29T02:35:44.020Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 24,
+    "fields": {
+      "category": 1,
+      "name": "Pimienta entera blanca",
+      "slug": "pimienta-entera-blanca",
+      "description": "",
+      "image": "",
+      "price": "28000",
+      "price_250g": "7000",
+      "sale_unit": "kg",
+      "package_label": "=F69-H69",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.145Z",
+      "updated_at": "2026-10-29T02:35:44.020Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 25,
+    "fields": {
+      "category": 1,
+      "name": "Pimienta entera rojo",
+      "slug": "pimienta-entera-rojo",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F71-H71",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.147Z",
+      "updated_at": "2026-10-29T02:35:44.021Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 26,
+    "fields": {
+      "category": 1,
+      "name": "Mix pimientas negra y blanca",
+      "slug": "mix-pimientas-3-pimientas",
+      "description": "",
+      "image": "",
+      "price": "26000",
+      "price_250g": "7500",
+      "sale_unit": "kg",
+      "package_label": "=F65-H65",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.149Z",
+      "updated_at": "2026-10-29T02:35:44.013Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 27,
+    "fields": {
+      "category": 2,
+      "name": "Almendras enteras",
+      "slug": "almendras-enteras",
+      "description": "",
+      "image": "",
+      "price": "14000",
+      "price_250g": "3500",
+      "sale_unit": "kg",
+      "package_label": "=F88-H88",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.151Z",
+      "updated_at": "2026-10-29T02:35:44.033Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 28,
+    "fields": {
+      "category": 2,
+      "name": "Almendras con daño mecanico",
+      "slug": "almendras-segunda",
+      "description": "",
+      "image": "",
+      "price": "11500",
+      "price_250g": "3000",
+      "sale_unit": "kg",
+      "package_label": "=F90-H90",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.153Z",
+      "updated_at": "2026-10-29T02:35:44.034Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 29,
+    "fields": {
+      "category": 2,
+      "name": "Almendras laminadas",
+      "slug": "almendras-laminadas",
+      "description": "",
+      "image": "",
+      "price": "16000",
+      "price_250g": "4300",
+      "sale_unit": "kg",
+      "package_label": "=F89-H89",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.154Z",
+      "updated_at": "2026-10-29T02:35:44.034Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 30,
+    "fields": {
+      "category": 2,
+      "name": "Nueces mariposa",
+      "slug": "nueces-mariposa",
+      "description": "",
+      "image": "",
+      "price": "10000",
+      "price_250g": "3000",
+      "sale_unit": "kg",
+      "package_label": "=F99-H99",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.156Z",
+      "updated_at": "2026-10-29T02:35:44.041Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 31,
+    "fields": {
+      "category": 2,
+      "name": "Nueces partida",
+      "slug": "nueces-partida",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F100-H100",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.157Z",
+      "updated_at": "2026-10-29T02:35:44.042Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 32,
+    "fields": {
+      "category": 2,
+      "name": "Maní tostado con o sin sal",
+      "slug": "mani-tostado-con-o-sin-sal",
+      "description": "",
+      "image": "",
+      "price": "4300",
+      "price_250g": "1200",
+      "sale_unit": "kg",
+      "package_label": "=F98-H98",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.159Z",
+      "updated_at": "2026-10-29T02:35:44.041Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 33,
+    "fields": {
+      "category": 2,
+      "name": "Maní con cáscara",
+      "slug": "mani-con-cascara",
+      "description": "",
+      "image": "",
+      "price": "6000",
+      "price_250g": "1500",
+      "sale_unit": "kg",
+      "package_label": "=F96-H96",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.160Z",
+      "updated_at": "2026-10-29T02:35:44.039Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 34,
+    "fields": {
+      "category": 2,
+      "name": "Maní japonés natural",
+      "slug": "mani-japones-natural",
+      "description": "",
+      "image": "",
+      "price": "6500",
+      "price_250g": "1800",
+      "sale_unit": "kg",
+      "package_label": "=F97-H97",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.161Z",
+      "updated_at": "2026-10-29T02:35:44.040Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 35,
+    "fields": {
+      "category": 2,
+      "name": "Coco laminado",
+      "slug": "coco-laminado",
+      "description": "",
+      "image": "",
+      "price": "12000",
+      "price_250g": "3500",
+      "sale_unit": "kg",
+      "package_label": "=F94-H94",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.162Z",
+      "updated_at": "2026-10-29T02:35:44.038Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 36,
+    "fields": {
+      "category": 2,
+      "name": "Coco rallado",
+      "slug": "coco-rallado",
+      "description": "",
+      "image": "",
+      "price": "7500",
+      "price_250g": "2000",
+      "sale_unit": "kg",
+      "package_label": "=F95-H95",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.164Z",
+      "updated_at": "2026-10-29T02:35:44.039Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 37,
+    "fields": {
+      "category": 2,
+      "name": "Pistachos",
+      "slug": "pistachos",
+      "description": "",
+      "image": "",
+      "price": "19000",
+      "price_250g": "5000",
+      "sale_unit": "kg",
+      "package_label": "=F102-H102",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.165Z",
+      "updated_at": "2026-10-29T02:35:44.044Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 38,
+    "fields": {
+      "category": 2,
+      "name": "Pistacho pelado",
+      "slug": "pistacho-pelado",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F101-H101",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.166Z",
+      "updated_at": "2026-10-29T02:35:44.043Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 39,
+    "fields": {
+      "category": 2,
+      "name": "Castañas de cajú",
+      "slug": "castanas-de-caju",
+      "description": "",
+      "image": "",
+      "price": "16000",
+      "price_250g": "4300",
+      "sale_unit": "kg",
+      "package_label": "=F93-H93",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.168Z",
+      "updated_at": "2026-10-29T02:35:44.038Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 40,
+    "fields": {
+      "category": 2,
+      "name": "Avellana europea",
+      "slug": "avellana-europea",
+      "description": "",
+      "image": "",
+      "price": "15000",
+      "price_250g": "4000",
+      "sale_unit": "kg",
+      "package_label": "=F92-H92",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.169Z",
+      "updated_at": "2026-10-29T02:35:44.037Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 41,
+    "fields": {
+      "category": 2,
+      "name": "Avellana chilena",
+      "slug": "avellana-chilena",
+      "description": "",
+      "image": "",
+      "price": "28000",
+      "price_250g": "7500",
+      "sale_unit": "kg",
+      "package_label": "=F91-H91",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.171Z",
+      "updated_at": "2026-10-29T02:35:44.035Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 42,
+    "fields": {
+      "category": 3,
+      "name": "Pasas negras",
+      "slug": "pasas-negras",
+      "description": "",
+      "image": "",
+      "price": "3500",
+      "price_250g": "1000",
+      "sale_unit": "kg",
+      "package_label": "=F110-H110",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.174Z",
+      "updated_at": "2026-10-29T02:35:44.050Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 43,
+    "fields": {
+      "category": 3,
+      "name": "Pasas rubias",
+      "slug": "pasas-rubias",
+      "description": "",
+      "image": "",
+      "price": "8000",
+      "price_250g": "2000",
+      "sale_unit": "kg",
+      "package_label": "=F111-H111",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.176Z",
+      "updated_at": "2026-10-29T02:35:44.051Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 44,
+    "fields": {
+      "category": 3,
+      "name": "Pasas ámbar",
+      "slug": "pasas-ambar",
+      "description": "",
+      "image": "",
+      "price": "4000",
+      "price_250g": "1200",
+      "sale_unit": "kg",
+      "package_label": "=F112-H112",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.178Z",
+      "updated_at": "2026-10-29T02:35:44.049Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 45,
+    "fields": {
+      "category": 3,
+      "name": "Cranberries",
+      "slug": "cranberries",
+      "description": "",
+      "image": "",
+      "price": "11000",
+      "price_250g": "3000",
+      "sale_unit": "kg",
+      "package_label": "=F105-H105",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.180Z",
+      "updated_at": "2026-10-29T02:35:44.046Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 46,
+    "fields": {
+      "category": 3,
+      "name": "Bayas de goji",
+      "slug": "bayas-de-goji",
+      "description": "",
+      "image": "",
+      "price": "13000",
+      "price_250g": "3500",
+      "sale_unit": "kg",
+      "package_label": "=F103-H103",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.181Z",
+      "updated_at": "2026-10-29T02:35:44.045Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 47,
+    "fields": {
+      "category": 3,
+      "name": "Higos secos",
+      "slug": "higos-secos",
+      "description": "",
+      "image": "",
+      "price": "7500",
+      "price_250g": "2000",
+      "sale_unit": "kg",
+      "package_label": "=F108-H108",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.183Z",
+      "updated_at": "2026-10-29T02:35:44.048Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 48,
+    "fields": {
+      "category": 3,
+      "name": "Plátano chips",
+      "slug": "platano-chips",
+      "description": "",
+      "image": "",
+      "price": "8000",
+      "price_250g": "2200",
+      "sale_unit": "kg",
+      "package_label": "=F113-H113",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.185Z",
+      "updated_at": "2026-10-29T02:35:44.052Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 49,
+    "fields": {
+      "category": 3,
+      "name": "Huesillo jumbo",
+      "slug": "huesillos-grandes",
+      "description": "",
+      "image": "",
+      "price": "9000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F109-H109",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.186Z",
+      "updated_at": "2026-10-29T02:35:44.049Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 50,
+    "fields": {
+      "category": 3,
+      "name": "Ciruelas sin carozo",
+      "slug": "ciruelas-sin-carozo",
+      "description": "",
+      "image": "",
+      "price": "7000",
+      "price_250g": "2000",
+      "sale_unit": "kg",
+      "package_label": "=F104-H104",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.187Z",
+      "updated_at": "2026-10-29T02:35:44.046Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 51,
+    "fields": {
+      "category": 3,
+      "name": "Dátiles s/c",
+      "slug": "datiles-sc",
+      "description": "",
+      "image": "",
+      "price": "7000",
+      "price_250g": "2000",
+      "sale_unit": "kg",
+      "package_label": "=F107-H107",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.189Z",
+      "updated_at": "2026-10-29T02:35:44.047Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 52,
+    "fields": {
+      "category": 3,
+      "name": "Damasco turco",
+      "slug": "damasco-turco",
+      "description": "",
+      "image": "",
+      "price": "17500",
+      "price_250g": "4500",
+      "sale_unit": "kg",
+      "package_label": "=F106-H106",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.190Z",
+      "updated_at": "2026-10-29T02:35:44.047Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 53,
+    "fields": {
+      "category": 4,
+      "name": "Linaza",
+      "slug": "linaza",
+      "description": "",
+      "image": "",
+      "price": "3000",
+      "price_250g": "800",
+      "sale_unit": "kg",
+      "package_label": "=F138-H138",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.192Z",
+      "updated_at": "2026-10-29T02:35:44.074Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 54,
+    "fields": {
+      "category": 4,
+      "name": "Chía",
+      "slug": "chia",
+      "description": "",
+      "image": "",
+      "price": "5500",
+      "price_250g": "1500",
+      "sale_unit": "kg",
+      "package_label": "=F137-H137",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.193Z",
+      "updated_at": "2026-10-29T02:35:44.073Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 55,
+    "fields": {
+      "category": 4,
+      "name": "Amapola",
+      "slug": "amapola",
+      "description": "",
+      "image": "",
+      "price": "11000",
+      "price_250g": "3000",
+      "sale_unit": "kg",
+      "package_label": "",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.194Z",
+      "updated_at": "2026-10-29T02:35:44.073Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 56,
+    "fields": {
+      "category": 4,
+      "name": "Maravilla",
+      "slug": "maravilla",
+      "description": "",
+      "image": "",
+      "price": "3500",
+      "price_250g": "1000",
+      "sale_unit": "kg",
+      "package_label": "=F139-H139",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.195Z",
+      "updated_at": "2026-10-29T02:35:44.074Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 57,
+    "fields": {
+      "category": 4,
+      "name": "Semilla de zapallo",
+      "slug": "zapallo",
+      "description": "",
+      "image": "",
+      "price": "9000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F145-H145",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.196Z",
+      "updated_at": "2026-10-29T02:35:44.079Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 58,
+    "fields": {
+      "category": 4,
+      "name": "Sésamo blanco",
+      "slug": "sesamo-blanco",
+      "description": "",
+      "image": "",
+      "price": "7000",
+      "price_250g": "2000",
+      "sale_unit": "kg",
+      "package_label": "=F142-H142",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.197Z",
+      "updated_at": "2026-10-29T02:35:44.076Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 59,
+    "fields": {
+      "category": 4,
+      "name": "Sésamo negro",
+      "slug": "sesamo-negro",
+      "description": "",
+      "image": "",
+      "price": "7000",
+      "price_250g": "2000",
+      "sale_unit": "kg",
+      "package_label": "=F143-H143",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.199Z",
+      "updated_at": "2026-10-29T02:35:44.077Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 60,
+    "fields": {
+      "category": 4,
+      "name": "Sésamo tostado",
+      "slug": "sesamo-tostado",
+      "description": "",
+      "image": "",
+      "price": "7000",
+      "price_250g": "2000",
+      "sale_unit": "kg",
+      "package_label": "=F144-H144",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.200Z",
+      "updated_at": "2026-10-29T02:35:44.078Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 61,
+    "fields": {
+      "category": 4,
+      "name": "Semillas de mostaza (amarilla y café)",
+      "slug": "semillas-de-mostaza-amarilla-y-cafe",
+      "description": "",
+      "image": "",
+      "price": "9000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F141-H141",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.201Z",
+      "updated_at": "2026-10-29T02:35:44.076Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 62,
+    "fields": {
+      "category": 4,
+      "name": "Semillas de cáñamo",
+      "slug": "semillas-de-canamo",
+      "description": "",
+      "image": "",
+      "price": "10000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F140-H140",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.202Z",
+      "updated_at": "2026-10-29T02:35:44.075Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 63,
+    "fields": {
+      "category": 5,
+      "name": "Lentejas",
+      "slug": "lentejas",
+      "description": "",
+      "image": "",
+      "price": "2800",
+      "price_250g": "800",
+      "sale_unit": "kg",
+      "package_label": "=F129-H129",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.204Z",
+      "updated_at": "2026-10-29T02:35:44.066Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 64,
+    "fields": {
+      "category": 5,
+      "name": "Lentejas rojas",
+      "slug": "lentejas-rojas",
+      "description": "",
+      "image": "",
+      "price": "3000",
+      "price_250g": "1000",
+      "sale_unit": "kg",
+      "package_label": "=F130-H130",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.205Z",
+      "updated_at": "2026-10-29T02:35:44.067Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 65,
+    "fields": {
+      "category": 5,
+      "name": "Poroto burro (tórtola)",
+      "slug": "poroto-burro-tortola",
+      "description": "",
+      "image": "",
+      "price": "3000",
+      "price_250g": "800",
+      "sale_unit": "kg",
+      "package_label": "=F133-H133",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.207Z",
+      "updated_at": "2026-10-29T02:35:44.069Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 66,
+    "fields": {
+      "category": 5,
+      "name": "Poroto mung",
+      "slug": "poroto-mung",
+      "description": "",
+      "image": "",
+      "price": "3500",
+      "price_250g": "1000",
+      "sale_unit": "kg",
+      "package_label": "=F135-H135",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.208Z",
+      "updated_at": "2026-10-29T02:35:44.070Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 67,
+    "fields": {
+      "category": 5,
+      "name": "Poroto negro",
+      "slug": "poroto-negro",
+      "description": "",
+      "image": "",
+      "price": "2800",
+      "price_250g": "800",
+      "sale_unit": "kg",
+      "package_label": "=F136-H136",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.210Z",
+      "updated_at": "2026-10-29T02:35:44.071Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 68,
+    "fields": {
+      "category": 5,
+      "name": "Poroto blanco",
+      "slug": "poroto-blanco",
+      "description": "",
+      "image": "",
+      "price": "3400",
+      "price_250g": "900",
+      "sale_unit": "kg",
+      "package_label": "=F132-H132",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.212Z",
+      "updated_at": "2026-10-29T02:35:44.068Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 69,
+    "fields": {
+      "category": 5,
+      "name": "Poroto berry",
+      "slug": "poroto-berry",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F131-H131",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.214Z",
+      "updated_at": "2026-10-29T02:35:44.068Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 70,
+    "fields": {
+      "category": 5,
+      "name": "Poroto de soja",
+      "slug": "poroto-de-soja",
+      "description": "",
+      "image": "",
+      "price": "2500",
+      "price_250g": "800",
+      "sale_unit": "kg",
+      "package_label": "=F134-H134",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.216Z",
+      "updated_at": "2026-10-29T02:35:44.069Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 71,
+    "fields": {
+      "category": 5,
+      "name": "Garbanzos sin piel",
+      "slug": "garbanzos-sin-piel",
+      "description": "",
+      "image": "",
+      "price": "2800",
+      "price_250g": "800",
+      "sale_unit": "kg",
+      "package_label": "=F128-H128",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.217Z",
+      "updated_at": "2026-10-29T02:35:44.066Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 72,
+    "fields": {
+      "category": 5,
+      "name": "Arvejas partidas",
+      "slug": "arvejas-partidas",
+      "description": "",
+      "image": "",
+      "price": "2700",
+      "price_250g": "700",
+      "sale_unit": "kg",
+      "package_label": "=F127-H127",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.220Z",
+      "updated_at": "2026-10-29T02:35:44.065Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 73,
+    "fields": {
+      "category": 6,
+      "name": "Amaranto",
+      "slug": "amaranto",
+      "description": "",
+      "image": "",
+      "price": "5000",
+      "price_250g": "1500",
+      "sale_unit": "kg",
+      "package_label": "",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.222Z",
+      "updated_at": "2026-10-29T02:35:43.982Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 74,
+    "fields": {
+      "category": 6,
+      "name": "Trigo mote",
+      "slug": "trigo-mote",
+      "description": "",
+      "image": "",
+      "price": "2800",
+      "price_250g": "700",
+      "sale_unit": "kg",
+      "package_label": "=F41-H41",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.223Z",
+      "updated_at": "2026-10-29T02:35:43.992Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 75,
+    "fields": {
+      "category": 6,
+      "name": "Maíz curagua (CABRITAS)",
+      "slug": "maiz-curagua",
+      "description": "",
+      "image": "",
+      "price": "2000",
+      "price_250g": "600",
+      "sale_unit": "kg",
+      "package_label": "=F35-H35",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.225Z",
+      "updated_at": "2026-10-29T02:35:43.989Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 76,
+    "fields": {
+      "category": 6,
+      "name": "Quinua pop endulzada",
+      "slug": "quinua-pop-endulzada",
+      "description": "",
+      "image": "",
+      "price": "9700",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F38-H38",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.227Z",
+      "updated_at": "2026-10-29T02:35:43.991Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 77,
+    "fields": {
+      "category": 6,
+      "name": "Quinua pop natural",
+      "slug": "quinua-pop-natural",
+      "description": "",
+      "image": "",
+      "price": "12000",
+      "price_250g": "3500",
+      "sale_unit": "kg",
+      "package_label": "=F39-H39",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.228Z",
+      "updated_at": "2026-10-29T02:35:43.991Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 78,
+    "fields": {
+      "category": 6,
+      "name": "Quinua blanca",
+      "slug": "quinua-blanca",
+      "description": "",
+      "image": "",
+      "price": "5500",
+      "price_250g": "1500",
+      "sale_unit": "kg",
+      "package_label": "=F36-H36",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.229Z",
+      "updated_at": "2026-10-29T02:35:43.989Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 79,
+    "fields": {
+      "category": 6,
+      "name": "Quinua roja y negra",
+      "slug": "quinua-roja-y-negra",
+      "description": "",
+      "image": "",
+      "price": "5500",
+      "price_250g": "1500",
+      "sale_unit": "kg",
+      "package_label": "=F40-H40",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.230Z",
+      "updated_at": "2026-10-29T02:35:43.992Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 80,
+    "fields": {
+      "category": 6,
+      "name": "Quinua mix",
+      "slug": "quinua-mix",
+      "description": "",
+      "image": "",
+      "price": "5500",
+      "price_250g": "1500",
+      "sale_unit": "kg",
+      "package_label": "=F37-H37",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.231Z",
+      "updated_at": "2026-10-29T02:35:43.990Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 81,
+    "fields": {
+      "category": 6,
+      "name": "Arroz basmati",
+      "slug": "arroz-basmati",
+      "description": "",
+      "image": "",
+      "price": "4000",
+      "price_250g": "1200",
+      "sale_unit": "kg",
+      "package_label": "=F29-H29",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.233Z",
+      "updated_at": "2026-10-29T02:35:43.983Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 82,
+    "fields": {
+      "category": 6,
+      "name": "Avena entera",
+      "slug": "avena-entera",
+      "description": "",
+      "image": "",
+      "price": "1800",
+      "price_250g": "500",
+      "sale_unit": "kg",
+      "package_label": "=F30-H30",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.234Z",
+      "updated_at": "2026-10-29T02:35:43.984Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 83,
+    "fields": {
+      "category": 6,
+      "name": "Avena entera sin gluten",
+      "slug": "avena-entera-sin-gluten",
+      "description": "",
+      "image": "",
+      "price": "2500",
+      "price_250g": "800",
+      "sale_unit": "kg",
+      "package_label": "=F31-H31",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.235Z",
+      "updated_at": "2026-10-29T02:35:43.985Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 84,
+    "fields": {
+      "category": 6,
+      "name": "Avena instantánea",
+      "slug": "avena-instantanea",
+      "description": "",
+      "image": "",
+      "price": "1800",
+      "price_250g": "500",
+      "sale_unit": "kg",
+      "package_label": "=F32-H32",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.236Z",
+      "updated_at": "2026-10-29T02:35:43.985Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 85,
+    "fields": {
+      "category": 6,
+      "name": "Granola con frutos secos, semillas, manteq mani y miel",
+      "slug": "granola",
+      "description": "",
+      "image": "",
+      "price": "10000",
+      "price_250g": "3000",
+      "sale_unit": "kg",
+      "package_label": "=F34-H34",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.238Z",
+      "updated_at": "2026-10-29T02:35:43.988Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 86,
+    "fields": {
+      "category": 6,
+      "name": "Carne de soja",
+      "slug": "carne-de-soja",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F33-H33",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.239Z",
+      "updated_at": "2026-10-29T02:35:43.986Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 87,
+    "fields": {
+      "category": 7,
+      "name": "Harina de coco",
+      "slug": "h-coco",
+      "description": "",
+      "image": "",
+      "price": "5000",
+      "price_250g": "1500",
+      "sale_unit": "kg",
+      "package_label": "=F120-H120",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.241Z",
+      "updated_at": "2026-10-29T02:35:44.058Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 88,
+    "fields": {
+      "category": 7,
+      "name": "Harina de avena",
+      "slug": "h-avena",
+      "description": "",
+      "image": "",
+      "price": "2500",
+      "price_250g": "700",
+      "sale_unit": "kg",
+      "package_label": "=F118-H118",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.243Z",
+      "updated_at": "2026-10-29T02:35:44.056Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 89,
+    "fields": {
+      "category": 7,
+      "name": "Harina de arroz",
+      "slug": "h-arroz",
+      "description": "",
+      "image": "",
+      "price": "2500",
+      "price_250g": "700",
+      "sale_unit": "kg",
+      "package_label": "=F117-H117",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.244Z",
+      "updated_at": "2026-10-29T02:35:44.055Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 90,
+    "fields": {
+      "category": 7,
+      "name": "Harina de trigo sarraceno",
+      "slug": "h-sarraceno",
+      "description": "",
+      "image": "",
+      "price": "5800",
+      "price_250g": "1600",
+      "sale_unit": "kg",
+      "package_label": "=F119-H119",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.245Z",
+      "updated_at": "2026-10-29T02:35:44.056Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 91,
+    "fields": {
+      "category": 7,
+      "name": "Harina de mandioca",
+      "slug": "h-mandioca",
+      "description": "",
+      "image": "",
+      "price": "3000",
+      "price_250g": "800",
+      "sale_unit": "kg",
+      "package_label": "=F125-H125",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.247Z",
+      "updated_at": "2026-10-29T02:35:44.062Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 92,
+    "fields": {
+      "category": 7,
+      "name": "Harina de garbanzos",
+      "slug": "h-garbanzos",
+      "description": "",
+      "image": "",
+      "price": "2500",
+      "price_250g": "700",
+      "sale_unit": "kg",
+      "package_label": "=F121-H121",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.248Z",
+      "updated_at": "2026-10-29T02:35:44.059Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 93,
+    "fields": {
+      "category": 7,
+      "name": "Harina de linaza",
+      "slug": "h-linaza",
+      "description": "",
+      "image": "",
+      "price": "3000",
+      "price_250g": "800",
+      "sale_unit": "kg",
+      "package_label": "=F123-H123",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.249Z",
+      "updated_at": "2026-10-29T02:35:44.060Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 94,
+    "fields": {
+      "category": 7,
+      "name": "Harina de maca",
+      "slug": "h-maca",
+      "description": "",
+      "image": "",
+      "price": "10000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F124-H124",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.251Z",
+      "updated_at": "2026-10-29T02:35:44.061Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 95,
+    "fields": {
+      "category": 7,
+      "name": "Harina integral",
+      "slug": "h-integral",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F122-H122",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.252Z",
+      "updated_at": "2026-10-29T02:35:44.060Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 96,
+    "fields": {
+      "category": 7,
+      "name": "H. almendras con piel",
+      "slug": "h-almendras",
+      "description": "",
+      "image": "",
+      "price": "10000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F115-H115",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.254Z",
+      "updated_at": "2026-10-29T02:35:44.054Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 97,
+    "fields": {
+      "category": 7,
+      "name": "H. almendras sin piel",
+      "slug": "h-almendras-sp",
+      "description": "",
+      "image": "",
+      "price": "15500",
+      "price_250g": "4500",
+      "sale_unit": "kg",
+      "package_label": "=F116-H116",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.256Z",
+      "updated_at": "2026-10-29T02:35:44.054Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 98,
+    "fields": {
+      "category": 7,
+      "name": "Gluten",
+      "slug": "gluten",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F114-H114",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.257Z",
+      "updated_at": "2026-10-29T02:35:44.053Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 99,
+    "fields": {
+      "category": 7,
+      "name": "Maicena",
+      "slug": "maicena",
+      "description": "",
+      "image": "",
+      "price": "2200",
+      "price_250g": "600",
+      "sale_unit": "kg",
+      "package_label": "=F126-H126",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.259Z",
+      "updated_at": "2026-10-29T02:35:44.063Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 100,
+    "fields": {
+      "category": 8,
+      "name": "Té Ceylán",
+      "slug": "te-ceylan",
+      "description": "",
+      "image": "",
+      "price": "11000",
+      "price_250g": "3000",
+      "sale_unit": "kg",
+      "package_label": "=F23-H23",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.261Z",
+      "updated_at": "2026-10-29T02:35:43.978Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 101,
+    "fields": {
+      "category": 8,
+      "name": "Té Rooibos",
+      "slug": "te-rooibos",
+      "description": "",
+      "image": "",
+      "price": "37000",
+      "price_250g": "10000",
+      "sale_unit": "kg",
+      "package_label": "=F24-H24",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.262Z",
+      "updated_at": "2026-10-29T02:25:54.414Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 102,
+    "fields": {
+      "category": 8,
+      "name": "Té rojo",
+      "slug": "te-rojo",
+      "description": "",
+      "image": "",
+      "price": "10000",
+      "price_250g": "3000",
+      "sale_unit": "kg",
+      "package_label": "=F27-H27",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.263Z",
+      "updated_at": "2026-10-29T02:35:43.979Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 103,
+    "fields": {
+      "category": 8,
+      "name": "Té verde",
+      "slug": "te-verde",
+      "description": "",
+      "image": "",
+      "price": "10000",
+      "price_250g": "3000",
+      "sale_unit": "kg",
+      "package_label": "=F28-H28",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.264Z",
+      "updated_at": "2026-10-29T02:35:43.981Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 104,
+    "fields": {
+      "category": 8,
+      "name": "Té de jazmín",
+      "slug": "te-de-jazmin",
+      "description": "",
+      "image": "",
+      "price": "13000",
+      "price_250g": "3500",
+      "sale_unit": "kg",
+      "package_label": "=F26-H26",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.265Z",
+      "updated_at": "2026-10-29T02:35:43.979Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 105,
+    "fields": {
+      "category": 8,
+      "name": "Té chai",
+      "slug": "te-chai",
+      "description": "",
+      "image": "",
+      "price": "25000",
+      "price_250g": "6500",
+      "sale_unit": "kg",
+      "package_label": "=F25-H25",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.267Z",
+      "updated_at": "2026-10-29T02:35:43.978Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 106,
+    "fields": {
+      "category": 8,
+      "name": "Flor de Jamaica",
+      "slug": "flor-de-jamaica",
+      "description": "",
+      "image": "",
+      "price": "9000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F21-H21",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.269Z",
+      "updated_at": "2026-10-29T02:35:43.976Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 107,
+    "fields": {
+      "category": 8,
+      "name": "Anís estrella",
+      "slug": "anis-estrella",
+      "description": "",
+      "image": "",
+      "price": "17000",
+      "price_250g": "4500",
+      "sale_unit": "kg",
+      "package_label": "=F16-H16",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.271Z",
+      "updated_at": "2026-10-29T02:35:43.972Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 108,
+    "fields": {
+      "category": 8,
+      "name": "Clavo de olor",
+      "slug": "clavo-de-olor",
+      "description": "",
+      "image": "",
+      "price": "23000",
+      "price_250g": "6000",
+      "sale_unit": "kg",
+      "package_label": "=F20-H20",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.272Z",
+      "updated_at": "2026-10-29T02:35:43.976Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 109,
+    "fields": {
+      "category": 8,
+      "name": "Cardamomo",
+      "slug": "cardamomo",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F19-H19",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.274Z",
+      "updated_at": "2026-10-29T02:35:43.975Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 110,
+    "fields": {
+      "category": 8,
+      "name": "Canela entera",
+      "slug": "canela-entera",
+      "description": "",
+      "image": "",
+      "price": "30000",
+      "price_250g": "8000",
+      "sale_unit": "kg",
+      "package_label": "=F17-H17",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.276Z",
+      "updated_at": "2026-10-29T02:35:43.973Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 111,
+    "fields": {
+      "category": 8,
+      "name": "Canela polvo",
+      "slug": "canela-polvo",
+      "description": "",
+      "image": "",
+      "price": "11000",
+      "price_250g": "3000",
+      "sale_unit": "kg",
+      "package_label": "=F18-H18",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.278Z",
+      "updated_at": "2026-10-29T02:35:43.974Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 112,
+    "fields": {
+      "category": 8,
+      "name": "Manzanilla flor",
+      "slug": "manzanilla-flor",
+      "description": "",
+      "image": "",
+      "price": "18000",
+      "price_250g": "5000",
+      "sale_unit": "kg",
+      "package_label": "=F22-H22",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.279Z",
+      "updated_at": "2026-10-29T02:35:43.977Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 113,
+    "fields": {
+      "category": 9,
+      "name": "Mantequilla de maní 500 g",
+      "slug": "mantequilla-de-mani-500-g",
+      "description": "",
+      "image": "",
+      "price": "3500",
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "=F7-H7",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.282Z",
+      "updated_at": "2026-10-29T02:35:43.962Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 114,
+    "fields": {
+      "category": 9,
+      "name": "Polen de abeja",
+      "slug": "polen-de-abeja",
+      "description": "",
+      "image": "",
+      "price": "25000",
+      "price_250g": "7000",
+      "sale_unit": "kg",
+      "package_label": "=F8-H8",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.283Z",
+      "updated_at": "2026-10-29T02:35:43.962Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 115,
+    "fields": {
+      "category": 9,
+      "name": "Tomates deshidratados",
+      "slug": "tomates-deshidratados",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F9-H9",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.285Z",
+      "updated_at": "2026-10-29T02:35:43.963Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 116,
+    "fields": {
+      "category": 9,
+      "name": "Callampas secas",
+      "slug": "callampas-secas",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F3-H3",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.287Z",
+      "updated_at": "2026-10-29T02:35:43.957Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 117,
+    "fields": {
+      "category": 9,
+      "name": "Bicarbonato de sodio",
+      "slug": "bicarbonato-de-sodio",
+      "description": "",
+      "image": "",
+      "price": "2000",
+      "price_250g": "700",
+      "sale_unit": "kg",
+      "package_label": "=F2-H2",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.289Z",
+      "updated_at": "2026-10-29T02:35:43.956Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 118,
+    "fields": {
+      "category": 9,
+      "name": "Levadura de cerveza",
+      "slug": "levadura-de-cerveza",
+      "description": "",
+      "image": "",
+      "price": "8000",
+      "price_250g": "2000",
+      "sale_unit": "kg",
+      "package_label": "=F5-H5",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.291Z",
+      "updated_at": "2026-10-29T02:35:43.960Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 119,
+    "fields": {
+      "category": 9,
+      "name": "Levadura nutricional",
+      "slug": "levadura-nutricional",
+      "description": "",
+      "image": "",
+      "price": "24000",
+      "price_250g": "6500",
+      "sale_unit": "kg",
+      "package_label": "=F6-H6",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.293Z",
+      "updated_at": "2026-10-29T02:35:43.961Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 120,
+    "fields": {
+      "category": 9,
+      "name": "Vinagre de manzana orgánico (Manare) 1 lt",
+      "slug": "vinagre-de-manzana-organico-manare-1-lt",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "=F11-H11",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.296Z",
+      "updated_at": "2026-10-29T02:35:43.964Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 121,
+    "fields": {
+      "category": 9,
+      "name": "Vaina de vainilla 1 un",
+      "slug": "vaina-de-vainilla-1-un",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "=F10-H10",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.298Z",
+      "updated_at": "2026-10-29T02:35:43.964Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 122,
+    "fields": {
+      "category": 10,
+      "name": "Panela 500 g",
+      "slug": "panela-500-g",
+      "description": "",
+      "image": "",
+      "price": "2800",
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "=F87-H87",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.300Z",
+      "updated_at": "2026-10-29T02:35:44.032Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 123,
+    "fields": {
+      "category": 10,
+      "name": "Jarabe de agave orgánico (Manare) 330 cc",
+      "slug": "jarabe-de-agave-organico-manare-330-cc",
+      "description": "",
+      "image": "",
+      "price": "5300",
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "=F85-H85",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.303Z",
+      "updated_at": "2026-10-29T02:35:44.031Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 124,
+    "fields": {
+      "category": 10,
+      "name": "Jarabe de agave 5,6 lt",
+      "slug": "jarabe-de-agave-56-lt",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "=F84-H84",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.305Z",
+      "updated_at": "2026-10-29T02:25:54.458Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 125,
+    "fields": {
+      "category": 10,
+      "name": "Miel",
+      "slug": "miel",
+      "description": "",
+      "image": "",
+      "price": "7000",
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.306Z",
+      "updated_at": "2026-10-29T02:25:54.459Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 126,
+    "fields": {
+      "category": 10,
+      "name": "Azúcar de coco",
+      "slug": "azucar-de-coco",
+      "description": "",
+      "image": "",
+      "price": "9000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "=F79-H79",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.309Z",
+      "updated_at": "2026-10-29T02:35:44.027Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 127,
+    "fields": {
+      "category": 10,
+      "name": "Azúcar rubia",
+      "slug": "azucar-rubia",
+      "description": "",
+      "image": "",
+      "price": "2500",
+      "price_250g": "700",
+      "sale_unit": "kg",
+      "package_label": "=F82-H82",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.310Z",
+      "updated_at": "2026-10-29T02:35:44.029Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 128,
+    "fields": {
+      "category": 10,
+      "name": "Azúcar morena",
+      "slug": "azucar-morena",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F81-H81",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:04:29.312Z",
+      "updated_at": "2026-10-29T02:35:44.028Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 129,
+    "fields": {
+      "category": 10,
+      "name": "Azúcar flor",
+      "slug": "azucar-flor",
+      "description": "",
+      "image": "",
+      "price": "2500",
+      "price_250g": "700",
+      "sale_unit": "kg",
+      "package_label": "=F80-H80",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.313Z",
+      "updated_at": "2026-10-29T02:35:44.028Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 130,
+    "fields": {
+      "category": 11,
+      "name": "Aceite de coco extra virgen 350 g",
+      "slug": "aceite-de-coco-extra-virgen-350-g",
+      "description": "",
+      "image": "",
+      "price": "3500",
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "=F12-H12",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.315Z",
+      "updated_at": "2026-10-29T02:35:43.965Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 131,
+    "fields": {
+      "category": 11,
+      "name": "Aceite de sésamo 270 ml",
+      "slug": "aceite-de-sesamo-270-ml",
+      "description": "",
+      "image": "",
+      "price": "3500",
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "=F13-H13",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.316Z",
+      "updated_at": "2026-10-29T02:35:43.966Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 132,
+    "fields": {
+      "category": 11,
+      "name": "Aceite oliva (calidad premium) 5 lt",
+      "slug": "aceite-oliva-calidad-premium-5-lt",
+      "description": "",
+      "image": "",
+      "price": "50000",
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "=F14-H14",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.317Z",
+      "updated_at": "2026-10-29T02:35:43.968Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 133,
+    "fields": {
+      "category": 12,
+      "name": "Barra 56%",
+      "slug": "barra-56",
+      "description": "",
+      "image": "",
+      "price": "23000",
+      "price_250g": "6000",
+      "sale_unit": "kg",
+      "package_label": "=F42-H42",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.319Z",
+      "updated_at": "2026-10-29T02:35:43.994Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 134,
+    "fields": {
+      "category": 12,
+      "name": "Barra 56% sin azúcar",
+      "slug": "barra-56-sin-azucar",
+      "description": "",
+      "image": "",
+      "price": "25000",
+      "price_250g": "6500",
+      "sale_unit": "kg",
+      "package_label": "=F43-H43",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.320Z",
+      "updated_at": "2026-10-29T02:35:43.995Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 135,
+    "fields": {
+      "category": 12,
+      "name": "Barra 72% sin azúcar",
+      "slug": "barra-72-sin-azucar",
+      "description": "",
+      "image": "",
+      "price": "27000",
+      "price_250g": "7000",
+      "sale_unit": "kg",
+      "package_label": "=F45-H45",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.321Z",
+      "updated_at": "2026-10-29T02:35:43.997Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 136,
+    "fields": {
+      "category": 12,
+      "name": "Barra 72%",
+      "slug": "barra-72",
+      "description": "",
+      "image": "",
+      "price": "25000",
+      "price_250g": "6500",
+      "sale_unit": "kg",
+      "package_label": "=F44-H44",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.322Z",
+      "updated_at": "2026-10-29T02:35:43.996Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 137,
+    "fields": {
+      "category": 12,
+      "name": "Chips 56% sin azúcar",
+      "slug": "chips-56-sin-azucar",
+      "description": "",
+      "image": "",
+      "price": "25000",
+      "price_250g": "6800",
+      "sale_unit": "kg",
+      "package_label": "=F48-H48",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.323Z",
+      "updated_at": "2026-10-29T02:35:43.999Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 138,
+    "fields": {
+      "category": 12,
+      "name": "Chips 63%",
+      "slug": "chips-63",
+      "description": "",
+      "image": "",
+      "price": "25000",
+      "price_250g": "6500",
+      "sale_unit": "kg",
+      "package_label": "=F49-H49",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.325Z",
+      "updated_at": "2026-10-29T02:35:43.999Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 139,
+    "fields": {
+      "category": 12,
+      "name": "Chips 72%",
+      "slug": "chips-72",
+      "description": "",
+      "image": "",
+      "price": "26000",
+      "price_250g": "6800",
+      "sale_unit": "kg",
+      "package_label": "=F50-H50",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.326Z",
+      "updated_at": "2026-10-29T02:35:44.000Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 140,
+    "fields": {
+      "category": 12,
+      "name": "Cacao polvo",
+      "slug": "cacao-polvo",
+      "description": "",
+      "image": "",
+      "price": "17000",
+      "price_250g": "4500",
+      "sale_unit": "kg",
+      "package_label": "=F47-H47",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.327Z",
+      "updated_at": "2026-10-29T02:35:43.998Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 141,
+    "fields": {
+      "category": 12,
+      "name": "Manteca de cacao",
+      "slug": "manteca-de-cacao",
+      "description": "",
+      "image": "",
+      "price": "40000",
+      "price_250g": "10000",
+      "sale_unit": "kg",
+      "package_label": "=F51-H51",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.328Z",
+      "updated_at": "2026-10-29T02:35:44.002Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 142,
+    "fields": {
+      "category": 12,
+      "name": "Cacao nibs",
+      "slug": "cacao-nibs",
+      "description": "",
+      "image": "",
+      "price": "30000",
+      "price_250g": "8000",
+      "sale_unit": "kg",
+      "package_label": "=F46-H46",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.329Z",
+      "updated_at": "2026-10-29T02:35:43.998Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 143,
+    "fields": {
+      "category": 12,
+      "name": "Barra choc blanco sin azúcar",
+      "slug": "barra-choc-blanco-sin-azucar",
+      "description": "",
+      "image": "",
+      "price": "26000",
+      "price_250g": "6800",
+      "sale_unit": "kg",
+      "package_label": "=F52-H52",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:04:29.331Z",
+      "updated_at": "2026-10-29T02:35:44.003Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 144,
+    "fields": {
+      "category": 9,
+      "name": "Crema de coco 400 cc",
+      "slug": "crema-de-coco-400-cc",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "=F4-H4",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.855Z",
+      "updated_at": "2026-10-29T02:35:43.958Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 145,
+    "fields": {
+      "category": 9,
+      "name": "Fondo de alcachofa",
+      "slug": "fondo-de-alcachofa",
+      "description": "",
+      "image": "",
+      "price": "7000",
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.857Z",
+      "updated_at": "2026-10-29T02:35:43.959Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 146,
+    "fields": {
+      "category": 11,
+      "name": "Aceite oliva (calidad premium) 750 cc",
+      "slug": "aceite-oliva-calidad-premium-750-cc",
+      "description": "",
+      "image": "",
+      "price": "9000",
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "=F15-H15",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:34:28.867Z",
+      "updated_at": "2026-10-29T02:35:43.968Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 147,
+    "fields": {
+      "category": 13,
+      "name": "Choco Beans (grano entero de cacao)",
+      "slug": "choco-beans-grano-entero-de-cacao",
+      "description": "",
+      "image": "",
+      "price": "25000",
+      "price_250g": "6500",
+      "sale_unit": "kg",
+      "package_label": "",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.869Z",
+      "updated_at": "2026-10-29T02:35:43.970Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 148,
+    "fields": {
+      "category": 13,
+      "name": "Choco Nibs (chips de granos de cacao)",
+      "slug": "choco-nibs-chips-de-granos-de-cacao",
+      "description": "",
+      "image": "",
+      "price": "21000",
+      "price_250g": "6000",
+      "sale_unit": "kg",
+      "package_label": "",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.870Z",
+      "updated_at": "2026-10-29T02:35:43.970Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 149,
+    "fields": {
+      "category": 13,
+      "name": "Piña en cubo",
+      "slug": "pina-en-cubo",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.871Z",
+      "updated_at": "2026-10-29T02:35:43.971Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 150,
+    "fields": {
+      "category": 6,
+      "name": "Arroz integral",
+      "slug": "arroz-integral",
+      "description": "",
+      "image": "",
+      "price": "1800",
+      "price_250g": "500",
+      "sale_unit": "kg",
+      "package_label": "",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.883Z",
+      "updated_at": "2026-10-29T02:35:43.984Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 151,
+    "fields": {
+      "category": 6,
+      "name": "Búrgul [OFERTA]",
+      "slug": "burgul-oferta",
+      "description": "",
+      "image": "",
+      "price": "3000",
+      "price_250g": "750",
+      "sale_unit": "kg",
+      "package_label": "",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.886Z",
+      "updated_at": "2026-10-29T02:35:43.986Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 152,
+    "fields": {
+      "category": 1,
+      "name": "Molinillo con pimientas",
+      "slug": "molinillo-con-pimientas",
+      "description": "",
+      "image": "",
+      "price": "4800",
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "unidad",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.913Z",
+      "updated_at": "2026-10-29T02:35:44.013Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 153,
+    "fields": {
+      "category": 1,
+      "name": "Molinillo con sal rosada",
+      "slug": "molinillo-con-sal-rosada",
+      "description": "",
+      "image": "",
+      "price": "3500",
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "unidad",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.914Z",
+      "updated_at": "2026-10-29T02:35:44.014Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 154,
+    "fields": {
+      "category": 1,
+      "name": "Molinillo solo",
+      "slug": "molinillo-solo",
+      "description": "",
+      "image": "",
+      "price": "2500",
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "unidad",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.914Z",
+      "updated_at": "2026-10-29T02:35:44.015Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 155,
+    "fields": {
+      "category": 1,
+      "name": "Paprika ó Aji de color",
+      "slug": "paprika",
+      "description": "",
+      "image": "",
+      "price": "5000",
+      "price_250g": "1500",
+      "sale_unit": "kg",
+      "package_label": "=F68-H68",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:34:28.917Z",
+      "updated_at": "2026-10-29T02:35:44.018Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 156,
+    "fields": {
+      "category": 1,
+      "name": "Perejil seco",
+      "slug": "perejil-seco",
+      "description": "",
+      "image": "",
+      "price": "5000",
+      "price_250g": "1500",
+      "sale_unit": "kg",
+      "package_label": "",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.918Z",
+      "updated_at": "2026-10-29T02:35:44.018Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 157,
+    "fields": {
+      "category": 1,
+      "name": "Pimienta cayena",
+      "slug": "pimienta-cayena",
+      "description": "",
+      "image": "",
+      "price": "10000",
+      "price_250g": "2500",
+      "sale_unit": "kg",
+      "package_label": "",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.920Z",
+      "updated_at": "2026-10-29T02:35:44.019Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 158,
+    "fields": {
+      "category": 10,
+      "name": "Jarabe de agave 1.250 cc",
+      "slug": "jarabe-de-agave-1250-cc",
+      "description": "",
+      "image": "",
+      "price": null,
+      "price_250g": null,
+      "sale_unit": "unit",
+      "package_label": "=F83-H83",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.930Z",
+      "updated_at": "2026-10-29T02:35:44.030Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 159,
+    "fields": {
+      "category": 10,
+      "name": "Miel (Cordillera del Maule)",
+      "slug": "miel-organica-cordillera-del-maule",
+      "description": "",
+      "image": "",
+      "price": "7000",
+      "price_250g": null,
+      "sale_unit": "kg",
+      "package_label": "=F86-H86",
+      "is_active": true,
+      "is_available": true,
+      "created_at": "2026-10-29T02:34:28.932Z",
+      "updated_at": "2026-10-29T02:35:44.031Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 160,
+    "fields": {
+      "category": 7,
+      "name": "H. quinua",
+      "slug": "h-quinua",
+      "description": "",
+      "image": "",
+      "price": "4000",
+      "price_250g": "1000",
+      "sale_unit": "kg",
+      "package_label": "",
+      "is_active": false,
+      "is_available": false,
+      "created_at": "2026-10-29T02:34:28.973Z",
+      "updated_at": "2026-10-29T02:35:44.062Z"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "4600",
+      "price_250g": "1500",
+      "price_5kg": "4100",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Orégano"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 2,
+    "fields": {
+      "product": 2,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "9000",
+      "price_250g": "2500",
+      "price_5kg": "7500",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Cúrcuma"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 3,
+    "fields": {
+      "product": 3,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "4000",
+      "price_250g": "1200",
+      "price_5kg": "3500",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Comino polvo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 4,
+    "fields": {
+      "product": 4,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "4000",
+      "price_250g": "1200",
+      "price_5kg": "3500",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Aliño completo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 5,
+    "fields": {
+      "product": 5,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Curry"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 6,
+    "fields": {
+      "product": 6,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "9000",
+      "price_250g": "2500",
+      "price_5kg": "8000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Merquén ahumado"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 7,
+    "fields": {
+      "product": 7,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "4500",
+      "price_250g": "1500",
+      "price_5kg": "4000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Semilla de cilantro"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 8,
+    "fields": {
+      "product": 8,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Semilla de comino"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 9,
+    "fields": {
+      "product": 9,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "10000",
+      "price_250g": "2500",
+      "price_5kg": "8500",
+      "price_10kg": "7500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Semillas de hinojo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 10,
+    "fields": {
+      "product": 10,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "9000",
+      "price_250g": "2500",
+      "price_5kg": "7500",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Cebolla en polvo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 11,
+    "fields": {
+      "product": 11,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "4300",
+      "price_250g": "1500",
+      "price_5kg": "3800",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Ajo en polvo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 12,
+    "fields": {
+      "product": 12,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Ajo en escamas"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 13,
+    "fields": {
+      "product": 13,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "35000",
+      "price_250g": "10000",
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Nuez moscada entera"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 14,
+    "fields": {
+      "product": 14,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "9000",
+      "price_250g": "2500",
+      "price_5kg": "7800",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Jengibre en polvo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 16,
+    "fields": {
+      "product": 16,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "13000",
+      "price_250g": "3500",
+      "price_5kg": "11000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Tomillo seco"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 17,
+    "fields": {
+      "product": 17,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "19000",
+      "price_250g": "5000",
+      "price_5kg": "16000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Romero seco"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 18,
+    "fields": {
+      "product": 18,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "25000",
+      "price_250g": "6500",
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Laurel hoja"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 19,
+    "fields": {
+      "product": 19,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "16000",
+      "price_250g": "4500",
+      "price_5kg": "13000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Eneldo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 20,
+    "fields": {
+      "product": 20,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "14000",
+      "price_250g": "4000",
+      "price_5kg": "11000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Ají cacho de cabra"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 21,
+    "fields": {
+      "product": 21,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3500",
+      "price_250g": "1000",
+      "price_5kg": "3000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Sal del Himalaya gruesa o fina"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 22,
+    "fields": {
+      "product": 22,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2000",
+      "price_250g": "600",
+      "price_5kg": "1700",
+      "price_10kg": "1500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Sal de mar"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 23,
+    "fields": {
+      "product": 23,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "23000",
+      "price_250g": "6000",
+      "price_5kg": "20000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Pimienta entera negra"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 24,
+    "fields": {
+      "product": 24,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "27000",
+      "price_250g": "7000",
+      "price_5kg": "24000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Pimienta entera blanca"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 25,
+    "fields": {
+      "product": 25,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Pimienta entera rojo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 26,
+    "fields": {
+      "product": 26,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "26000",
+      "price_250g": "7500",
+      "price_5kg": "24000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Mix pimientas negra y blanca"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 27,
+    "fields": {
+      "product": 27,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "14000",
+      "price_250g": "3500",
+      "price_5kg": "13500",
+      "price_10kg": "13000",
+      "closed_price": "12300",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Almendras enteras"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 28,
+    "fields": {
+      "product": 28,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "11500",
+      "price_250g": "3000",
+      "price_5kg": "11000",
+      "price_10kg": "10500",
+      "closed_price": "10000",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Almendras con daño mecanico"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 29,
+    "fields": {
+      "product": 29,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "16000",
+      "price_250g": "4300",
+      "price_5kg": "14800",
+      "price_10kg": "14320",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Almendras laminadas"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 30,
+    "fields": {
+      "product": 30,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "10000",
+      "price_250g": "3000",
+      "price_5kg": "9000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Nueces mariposa"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 31,
+    "fields": {
+      "product": 31,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Nueces partida"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 32,
+    "fields": {
+      "product": 32,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "4300",
+      "price_250g": "1200",
+      "price_5kg": "3800",
+      "price_10kg": null,
+      "closed_price": "3600",
+      "closed_format": "15k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Maní tostado con o sin sal"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 33,
+    "fields": {
+      "product": 33,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "6000",
+      "price_250g": "1500",
+      "price_5kg": "5500",
+      "price_10kg": "5300",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Maní con cáscara"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 34,
+    "fields": {
+      "product": 34,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "6500",
+      "price_250g": "1800",
+      "price_5kg": "6200",
+      "price_10kg": "5900",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Maní japonés natural"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 35,
+    "fields": {
+      "product": 35,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "12000",
+      "price_250g": "3500",
+      "price_5kg": "11500",
+      "price_10kg": "11000",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Coco laminado"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 36,
+    "fields": {
+      "product": 36,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "7500",
+      "price_250g": "2000",
+      "price_5kg": "7300",
+      "price_10kg": "7000",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Coco rallado"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 37,
+    "fields": {
+      "product": 37,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "19000",
+      "price_250g": "5000",
+      "price_5kg": null,
+      "price_10kg": "17800",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Pistachos"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 38,
+    "fields": {
+      "product": 38,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Pistacho pelado"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 39,
+    "fields": {
+      "product": 39,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "16000",
+      "price_250g": "4300",
+      "price_5kg": "14500",
+      "price_10kg": "13500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Castañas de cajú"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 40,
+    "fields": {
+      "product": 40,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "15000",
+      "price_250g": "4000",
+      "price_5kg": "14000",
+      "price_10kg": "13000",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Avellana europea"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 41,
+    "fields": {
+      "product": 41,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "28000",
+      "price_250g": "7500",
+      "price_5kg": "24000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Avellana chilena"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 42,
+    "fields": {
+      "product": 42,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3500",
+      "price_250g": "1000",
+      "price_5kg": "3350",
+      "price_10kg": "3100",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Pasas negras"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 43,
+    "fields": {
+      "product": 43,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "8000",
+      "price_250g": "2000",
+      "price_5kg": "7500",
+      "price_10kg": "7100",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Pasas rubias"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 44,
+    "fields": {
+      "product": 44,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "4000",
+      "price_250g": "1200",
+      "price_5kg": "3800",
+      "price_10kg": "3500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Pasas ámbar"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 45,
+    "fields": {
+      "product": 45,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "11000",
+      "price_250g": "3000",
+      "price_5kg": "9800",
+      "price_10kg": "9300",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Cranberries"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 46,
+    "fields": {
+      "product": 46,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "13000",
+      "price_250g": "3500",
+      "price_5kg": "12000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Bayas de goji"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 47,
+    "fields": {
+      "product": 47,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "7500",
+      "price_250g": "2000",
+      "price_5kg": "7000",
+      "price_10kg": "6800",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Higos secos"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 48,
+    "fields": {
+      "product": 48,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "8000",
+      "price_250g": "2200",
+      "price_5kg": "7600",
+      "price_10kg": "7200",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Plátano chips"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 49,
+    "fields": {
+      "product": 49,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "9000",
+      "price_250g": "2500",
+      "price_5kg": "8700",
+      "price_10kg": "8300",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Huesillo jumbo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 50,
+    "fields": {
+      "product": 50,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "7000",
+      "price_250g": "2000",
+      "price_5kg": "6700",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Ciruelas sin carozo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 51,
+    "fields": {
+      "product": 51,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "7000",
+      "price_250g": "2000",
+      "price_5kg": "6500",
+      "price_10kg": "6200",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Dátiles s/c"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 52,
+    "fields": {
+      "product": 52,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "17000",
+      "price_250g": "4500",
+      "price_5kg": "16300",
+      "price_10kg": "15800",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Damasco turco"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 53,
+    "fields": {
+      "product": 53,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3000",
+      "price_250g": "800",
+      "price_5kg": "2600",
+      "price_10kg": "2300",
+      "closed_price": "2100",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Linaza"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 54,
+    "fields": {
+      "product": 54,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "5500",
+      "price_250g": "1500",
+      "price_5kg": "5200",
+      "price_10kg": "4800",
+      "closed_price": "4200",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Chía"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 56,
+    "fields": {
+      "product": 56,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3700",
+      "price_250g": "1000",
+      "price_5kg": "3500",
+      "price_10kg": "3300",
+      "closed_price": "3000",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Maravilla"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 57,
+    "fields": {
+      "product": 57,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "9000",
+      "price_250g": "2500",
+      "price_5kg": "8300",
+      "price_10kg": "8000",
+      "closed_price": "7500",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Semilla de zapallo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 58,
+    "fields": {
+      "product": 58,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "6500",
+      "price_250g": "2000",
+      "price_5kg": "6200",
+      "price_10kg": "5900",
+      "closed_price": "5500",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Sésamo blanco"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 59,
+    "fields": {
+      "product": 59,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "6500",
+      "price_250g": "2000",
+      "price_5kg": "6200",
+      "price_10kg": "5900",
+      "closed_price": "5500",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Sésamo negro"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 60,
+    "fields": {
+      "product": 60,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "7000",
+      "price_250g": "2000",
+      "price_5kg": "6500",
+      "price_10kg": "6200",
+      "closed_price": "6000",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Sésamo tostado"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 61,
+    "fields": {
+      "product": 61,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "9000",
+      "price_250g": "2500",
+      "price_5kg": "8200",
+      "price_10kg": "7800",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Semillas de mostaza (amarilla y café)"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 62,
+    "fields": {
+      "product": 62,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "10000",
+      "price_250g": "2500",
+      "price_5kg": "8500",
+      "price_10kg": "7500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Semillas de cáñamo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 63,
+    "fields": {
+      "product": 63,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2800",
+      "price_250g": "800",
+      "price_5kg": "2500",
+      "price_10kg": null,
+      "closed_price": "2000",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Lentejas"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 64,
+    "fields": {
+      "product": 64,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3000",
+      "price_250g": "1000",
+      "price_5kg": "2800",
+      "price_10kg": "2500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Lentejas rojas"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 65,
+    "fields": {
+      "product": 65,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3000",
+      "price_250g": "800",
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Poroto burro (tórtola)"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 66,
+    "fields": {
+      "product": 66,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3500",
+      "price_250g": "1000",
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Poroto mung"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 67,
+    "fields": {
+      "product": 67,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3000",
+      "price_250g": "800",
+      "price_5kg": "2800",
+      "price_10kg": "2500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Poroto negro"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 68,
+    "fields": {
+      "product": 68,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3400",
+      "price_250g": "900",
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Poroto blanco"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 69,
+    "fields": {
+      "product": 69,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Poroto berry"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 70,
+    "fields": {
+      "product": 70,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2500",
+      "price_250g": "800",
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Poroto de soja"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 71,
+    "fields": {
+      "product": 71,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2800",
+      "price_250g": "800",
+      "price_5kg": "2600",
+      "price_10kg": null,
+      "closed_price": "2100",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Garbanzos sin piel"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 72,
+    "fields": {
+      "product": 72,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2700",
+      "price_250g": "700",
+      "price_5kg": null,
+      "price_10kg": "2300",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Arvejas partidas"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 74,
+    "fields": {
+      "product": 74,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2800",
+      "price_250g": "700",
+      "price_5kg": null,
+      "price_10kg": "2500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Trigo mote"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 75,
+    "fields": {
+      "product": 75,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2000",
+      "price_250g": "600",
+      "price_5kg": null,
+      "price_10kg": "1700",
+      "closed_price": "1500",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Maíz curagua (CABRITAS)"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 76,
+    "fields": {
+      "product": 76,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "9500",
+      "price_250g": "2500",
+      "price_5kg": "8500",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Quinua pop endulzada"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 77,
+    "fields": {
+      "product": 77,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "13000",
+      "price_250g": "3500",
+      "price_5kg": "11000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Quinua pop natural"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 78,
+    "fields": {
+      "product": 78,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "5500",
+      "price_250g": "1500",
+      "price_5kg": "5300",
+      "price_10kg": "5000",
+      "closed_price": "4800",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Quinua blanca"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 79,
+    "fields": {
+      "product": 79,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "5500",
+      "price_250g": "1500",
+      "price_5kg": null,
+      "price_10kg": "5300",
+      "closed_price": "4800",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Quinua roja y negra"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 80,
+    "fields": {
+      "product": 80,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "5500",
+      "price_250g": "1500",
+      "price_5kg": null,
+      "price_10kg": "5300",
+      "closed_price": "4800",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Quinua mix"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 81,
+    "fields": {
+      "product": 81,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "4000",
+      "price_250g": "1200",
+      "price_5kg": null,
+      "price_10kg": "3700",
+      "closed_price": "3200",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Arroz basmati"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 82,
+    "fields": {
+      "product": 82,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "1800",
+      "price_250g": "500",
+      "price_5kg": null,
+      "price_10kg": "1650",
+      "closed_price": "1520",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Avena entera"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 83,
+    "fields": {
+      "product": 83,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2500",
+      "price_250g": "800",
+      "price_5kg": null,
+      "price_10kg": "2000",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Avena entera sin gluten"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 84,
+    "fields": {
+      "product": 84,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "1800",
+      "price_250g": "500",
+      "price_5kg": null,
+      "price_10kg": "1650",
+      "closed_price": "1520",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Avena instantánea"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 85,
+    "fields": {
+      "product": 85,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "10000",
+      "price_250g": "3000",
+      "price_5kg": null,
+      "price_10kg": "8700",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Granola con frutos secos, semillas, manteq mani y miel"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 86,
+    "fields": {
+      "product": 86,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Carne de soja"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 87,
+    "fields": {
+      "product": 87,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "5000",
+      "price_250g": "1500",
+      "price_5kg": "4800",
+      "price_10kg": "4400",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Harina de coco"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 88,
+    "fields": {
+      "product": 88,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2200",
+      "price_250g": "700",
+      "price_5kg": "2000",
+      "price_10kg": "1800",
+      "closed_price": "1680",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Harina de avena"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 89,
+    "fields": {
+      "product": 89,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2300",
+      "price_250g": "700",
+      "price_5kg": null,
+      "price_10kg": "2100",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Harina de arroz"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 90,
+    "fields": {
+      "product": 90,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "5800",
+      "price_250g": "1600",
+      "price_5kg": "5300",
+      "price_10kg": null,
+      "closed_price": "4800",
+      "closed_format": "25k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Harina de trigo sarraceno"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 91,
+    "fields": {
+      "product": 91,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3000",
+      "price_250g": "800",
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Harina de mandioca"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 92,
+    "fields": {
+      "product": 92,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2500",
+      "price_250g": "700",
+      "price_5kg": "2400",
+      "price_10kg": "2300",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Harina de garbanzos"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 93,
+    "fields": {
+      "product": 93,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3000",
+      "price_250g": "800",
+      "price_5kg": "2850",
+      "price_10kg": "2700",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Harina de linaza"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 94,
+    "fields": {
+      "product": 94,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "10000",
+      "price_250g": "2500",
+      "price_5kg": "9000",
+      "price_10kg": "8000",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Harina de maca"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 95,
+    "fields": {
+      "product": 95,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Harina integral"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 96,
+    "fields": {
+      "product": 96,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "10000",
+      "price_250g": "2500",
+      "price_5kg": "9000",
+      "price_10kg": "8200",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "H. almendras con piel"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 97,
+    "fields": {
+      "product": 97,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "15500",
+      "price_250g": "4500",
+      "price_5kg": "14800",
+      "price_10kg": "14320",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "H. almendras sin piel"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 98,
+    "fields": {
+      "product": 98,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Gluten"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 99,
+    "fields": {
+      "product": 99,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2200",
+      "price_250g": "600",
+      "price_5kg": "2000",
+      "price_10kg": "1900",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Maicena"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 100,
+    "fields": {
+      "product": 100,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "10500",
+      "price_250g": "3000",
+      "price_5kg": "9000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Té Ceylán"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 101,
+    "fields": {
+      "product": 101,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "36000",
+      "price_250g": "10000",
+      "price_5kg": "32000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Té Rooibos"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 102,
+    "fields": {
+      "product": 102,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "10000",
+      "price_250g": "3000",
+      "price_5kg": "8800",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Té rojo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 103,
+    "fields": {
+      "product": 103,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "9000",
+      "price_250g": "2500",
+      "price_5kg": "8000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Té verde"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 104,
+    "fields": {
+      "product": 104,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "13000",
+      "price_250g": "3500",
+      "price_5kg": "12000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Té de jazmín"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 105,
+    "fields": {
+      "product": 105,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "25000",
+      "price_250g": "6500",
+      "price_5kg": "23000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Té chai"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 106,
+    "fields": {
+      "product": 106,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "9000",
+      "price_250g": "2500",
+      "price_5kg": "8000",
+      "price_10kg": null,
+      "closed_price": "7500",
+      "closed_format": "10k",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Flor de Jamaica"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 107,
+    "fields": {
+      "product": 107,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "17000",
+      "price_250g": "4500",
+      "price_5kg": "15000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Anís estrella"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 108,
+    "fields": {
+      "product": 108,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "23000",
+      "price_250g": "6000",
+      "price_5kg": "19000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Clavo de olor"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 109,
+    "fields": {
+      "product": 109,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Cardamomo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 110,
+    "fields": {
+      "product": 110,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "30000",
+      "price_250g": "8000",
+      "price_5kg": "25000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Canela entera"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 111,
+    "fields": {
+      "product": 111,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "11000",
+      "price_250g": "3000",
+      "price_5kg": "10000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Canela polvo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 112,
+    "fields": {
+      "product": 112,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "18000",
+      "price_250g": "5000",
+      "price_5kg": "16000",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Manzanilla flor"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 113,
+    "fields": {
+      "product": 113,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3500",
+      "price_250g": null,
+      "price_5kg": "3300",
+      "price_10kg": null,
+      "closed_price": "3000",
+      "closed_format": "12U",
+      "price_unit": "package",
+      "package_label": "500 g",
+      "name_override": "Mantequilla de maní 500 g"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 114,
+    "fields": {
+      "product": 114,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "25000",
+      "price_250g": "7000",
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Polen de abeja"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 115,
+    "fields": {
+      "product": 115,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Tomates deshidratados"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 116,
+    "fields": {
+      "product": 116,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Callampas secas"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 117,
+    "fields": {
+      "product": 117,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2300",
+      "price_250g": "700",
+      "price_5kg": "2000",
+      "price_10kg": "1750",
+      "closed_price": "1500",
+      "closed_format": "25K",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Bicarbonato de sodio"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 118,
+    "fields": {
+      "product": 118,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "8000",
+      "price_250g": "2000",
+      "price_5kg": "7500",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Levadura de cerveza"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 119,
+    "fields": {
+      "product": 119,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "23000",
+      "price_250g": "6000",
+      "price_5kg": "20000",
+      "price_10kg": "18000",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Levadura nutricional"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 120,
+    "fields": {
+      "product": 120,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "package",
+      "package_label": "1 lt",
+      "name_override": "Vinagre de manzana orgánico (Manare) 1 lt"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 121,
+    "fields": {
+      "product": 121,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "package",
+      "package_label": "1 un",
+      "name_override": "Vaina de vainilla 1 un"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 122,
+    "fields": {
+      "product": 122,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2800",
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": "2500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "package",
+      "package_label": "500 g",
+      "name_override": "Panela 500 g"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 123,
+    "fields": {
+      "product": 123,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "5300",
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": "4800",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "package",
+      "package_label": "330 cc",
+      "name_override": "Jarabe de agave orgánico (Manare) 330 cc"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 124,
+    "fields": {
+      "product": 124,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "package",
+      "package_label": "5,6 lt",
+      "name_override": "Jarabe de agave 5,6 lt"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 126,
+    "fields": {
+      "product": 126,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "9000",
+      "price_250g": "2500",
+      "price_5kg": "8300",
+      "price_10kg": "7800",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Azúcar de coco"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 127,
+    "fields": {
+      "product": 127,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2500",
+      "price_250g": "700",
+      "price_5kg": "2300",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Azúcar rubia"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 128,
+    "fields": {
+      "product": 128,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Azúcar morena"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 129,
+    "fields": {
+      "product": 129,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "2500",
+      "price_250g": "700",
+      "price_5kg": "2300",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Azúcar flor"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 130,
+    "fields": {
+      "product": 130,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3300",
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": "3000",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "package",
+      "package_label": "350 g",
+      "name_override": "Aceite de coco extra virgen 350 g"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 131,
+    "fields": {
+      "product": 131,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "3800",
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": "3200",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "package",
+      "package_label": "270 ml",
+      "name_override": "Aceite de sésamo 270 ml"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 132,
+    "fields": {
+      "product": 132,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "50000",
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": "47000",
+      "closed_format": "4U",
+      "price_unit": "package",
+      "package_label": "5 lt",
+      "name_override": "Aceite oliva (calidad premium) 5 lt"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 133,
+    "fields": {
+      "product": 133,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "22000",
+      "price_250g": "6000",
+      "price_5kg": null,
+      "price_10kg": "19500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Barra 56%"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 134,
+    "fields": {
+      "product": 134,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "25000",
+      "price_250g": "6500",
+      "price_5kg": null,
+      "price_10kg": "22000",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Barra 56% sin azúcar"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 135,
+    "fields": {
+      "product": 135,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "27000",
+      "price_250g": "7000",
+      "price_5kg": null,
+      "price_10kg": "23500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Barra 72% sin azúcar"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 136,
+    "fields": {
+      "product": 136,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "25000",
+      "price_250g": "6500",
+      "price_5kg": null,
+      "price_10kg": "22500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Barra 72%"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 137,
+    "fields": {
+      "product": 137,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "25000",
+      "price_250g": "6800",
+      "price_5kg": null,
+      "price_10kg": "22500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Chips 56% sin azúcar"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 138,
+    "fields": {
+      "product": 138,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "25000",
+      "price_250g": "6500",
+      "price_5kg": null,
+      "price_10kg": "22000",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Chips 63%"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 139,
+    "fields": {
+      "product": 139,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "26000",
+      "price_250g": "6800",
+      "price_5kg": null,
+      "price_10kg": "23000",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Chips 72%"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 140,
+    "fields": {
+      "product": 140,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "17000",
+      "price_250g": "4500",
+      "price_5kg": null,
+      "price_10kg": "14500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Cacao polvo"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 141,
+    "fields": {
+      "product": 141,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "40000",
+      "price_250g": "10000",
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Manteca de cacao"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 142,
+    "fields": {
+      "product": 142,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "30000",
+      "price_250g": "8000",
+      "price_5kg": null,
+      "price_10kg": "26000",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Cacao nibs"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 143,
+    "fields": {
+      "product": 143,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "26000",
+      "price_250g": "6800",
+      "price_5kg": null,
+      "price_10kg": "22500",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Barra choc blanco sin azúcar"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 144,
+    "fields": {
+      "product": 144,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "package",
+      "package_label": "400 cc",
+      "name_override": "Crema de coco 400 cc"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 145,
+    "fields": {
+      "product": 146,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "9000",
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": "8000",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "package",
+      "package_label": "750 cc",
+      "name_override": "Aceite oliva (calidad premium) 750 cc"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 146,
+    "fields": {
+      "product": 155,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "4300",
+      "price_250g": "1500",
+      "price_5kg": "3800",
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Paprika ó Aji de color"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 147,
+    "fields": {
+      "product": 158,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": null,
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": null,
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "package",
+      "package_label": "1.250 cc",
+      "name_override": "Jarabe de agave 1.250"
+    }
+  },
+  {
+    "model": "catalog.wholesaleprice",
+    "pk": 148,
+    "fields": {
+      "product": 159,
+      "price_list": "Lista mayorista 2026 (PDF proporcionado)",
+      "price": "6500",
+      "price_250g": null,
+      "price_5kg": null,
+      "price_10kg": "5900",
+      "closed_price": null,
+      "closed_format": "",
+      "price_unit": "kg",
+      "package_label": "",
+      "name_override": "Miel (Cordillera del Maule)"
+    }
+  }
+]

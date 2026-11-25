@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 import environ
 from django.core.exceptions import ImproperlyConfigured
@@ -22,12 +23,16 @@ ALLOWED_HOSTS = env.list(
     "DJANGO_ALLOWED_HOSTS",
     default=["localhost", "127.0.0.1"] if DEBUG else [],
 )
+RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME", "").strip()
+if RENDER_EXTERNAL_HOSTNAME and RENDER_EXTERNAL_HOSTNAME not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+render_origin = f"https://{RENDER_EXTERNAL_HOSTNAME}" if RENDER_EXTERNAL_HOSTNAME else ""
 CORS_ALLOWED_ORIGINS = env.list(
     "DJANGO_CORS_ALLOWED_ORIGINS",
     default=(
         ["http://localhost:5173", "http://127.0.0.1:5173"]
         if DEBUG
-        else []
+        else [render_origin] if render_origin else []
     ),
 )
 CSRF_TRUSTED_ORIGINS = env.list(
@@ -35,7 +40,7 @@ CSRF_TRUSTED_ORIGINS = env.list(
     default=(
         ["http://localhost:5173", "http://127.0.0.1:5173"]
         if DEBUG
-        else []
+        else [render_origin] if render_origin else []
     ),
 )
 
@@ -70,7 +75,12 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates"],
+        "DIRS": [BASE_DIR / "templates"]
+        + (
+            [ROOT_DIR / "frontend-dist"]
+            if (ROOT_DIR / "frontend-dist").is_dir()
+            else []
+        ),
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -101,9 +111,9 @@ if configured_media_root and not MEDIA_ROOT.is_absolute():
     raise ImproperlyConfigured("MEDIA_ROOT debe ser una ruta absoluta.")
 
 if not DEBUG:
-    if not SECRET_KEY or len(SECRET_KEY) < 50 or SECRET_KEY.startswith("django-insecure-"):
+    if not SECRET_KEY or len(SECRET_KEY) < 43 or SECRET_KEY.startswith("django-insecure-"):
         raise ImproperlyConfigured(
-            "En producción, DJANGO_SECRET_KEY debe ser una clave aleatoria de al menos 50 caracteres."
+            "En producción, DJANGO_SECRET_KEY debe ser aleatoria y tener al menos 43 caracteres."
         )
     if not ALLOWED_HOSTS or "*" in ALLOWED_HOSTS:
         raise ImproperlyConfigured(
@@ -143,6 +153,8 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+if (ROOT_DIR / "frontend-dist").is_dir():
+    STATICFILES_DIRS.append(("frontend", ROOT_DIR / "frontend-dist"))
 MEDIA_URL = "media/"
 STORAGES = {
     "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
@@ -150,7 +162,7 @@ STORAGES = {
         "BACKEND": (
             "django.contrib.staticfiles.storage.StaticFilesStorage"
             if DEBUG
-            else "whitenoise.storage.CompressedManifestStaticFilesStorage"
+            else "whitenoise.storage.CompressedStaticFilesStorage"
         ),
     },
 }
@@ -209,4 +221,7 @@ DEFAULT_FROM_EMAIL = env(
     default=EMAIL_HOST_USER or STORE_CONTACT_EMAIL,
 )
 EMAIL_TIMEOUT = env.int("EMAIL_TIMEOUT", default=10)
-FRONTEND_BASE_URL = env("FRONTEND_BASE_URL", default="http://localhost:5173")
+FRONTEND_BASE_URL = env(
+    "FRONTEND_BASE_URL",
+    default=render_origin or "http://localhost:5173",
+)

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { fetchCategories, fetchStoreConfig } from "../api";
 import { sortCategories } from "../categoryOrder";
 import type { Category, StoreConfig } from "../types";
+import { publicAsset } from "../publicAsset";
 
 const emptyConfig: StoreConfig = {
   name: "Siempre Natural",
@@ -177,10 +178,10 @@ export function HomePage() {
                 if (image.dataset.fallbackApplied !== "true") {
                   image.dataset.fallbackApplied = "true";
                   image.alt = "Selección de productos naturales a granel";
-                  image.src = "/images/despensa-portada.webp";
+                  image.src = publicAsset("/images/despensa-portada.webp");
                 }
               }}
-              src={currentSlide.src}
+              src={publicAsset(currentSlide.src)}
             />
             <div className="bulk-showcase-shade" />
             <div className="bulk-showcase-caption">
@@ -280,9 +281,9 @@ export function HomePage() {
                   aria-hidden="true"
                   className="category-card-image"
                   onError={(event) => {
-                    event.currentTarget.src = "/images/despensa-natural.webp";
+                    event.currentTarget.src = publicAsset("/images/despensa-natural.webp");
                   }}
-                  src={categoryProductImages[category.slug] || "/images/despensa-natural.webp"}
+                  src={publicAsset(categoryProductImages[category.slug] || "/images/despensa-natural.webp")}
                 />
                 <span aria-hidden="true" className="category-card-icon">✳</span>
                 <span className="category-card-name">{category.name}</span>
@@ -312,19 +313,19 @@ export function HomePage() {
           <article className="impact-card" aria-label="Compra consciente">
             <img
               alt="Compra consciente: compra a granel y elige la cantidad que necesitas"
-              src="/images/impact-compra.webp"
+              src={publicAsset("/images/impact-compra.webp")}
             />
           </article>
           <article className="impact-card" aria-label="Reutiliza">
             <img
               alt="Reutiliza: menos plástico y más vida con envases reutilizables"
-              src="/images/impact-reutiliza.webp"
+              src={publicAsset("/images/impact-reutiliza.webp")}
             />
           </article>
           <article className="impact-card" aria-label="Recicla">
             <img
               alt="Recicla: separa y recicla los envases según las opciones de tu comunidad"
-              src="/images/impact-recicla.webp"
+              src={publicAsset("/images/impact-recicla.webp")}
             />
           </article>
         </div>

@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../cart/CartContext";
+import { publicAsset } from "../publicAsset";
 
 export function Header() {
   const { count } = useCart();
@@ -9,7 +10,7 @@ export function Header() {
         <Link className="brand" to="/" aria-label="Siempre Natural, inicio">
           <img
             className="brand-logo"
-            src="/logo-siempre-natural.png"
+            src={publicAsset("/logo-siempre-natural.png")}
             alt=""
             width="48"
             height="48"

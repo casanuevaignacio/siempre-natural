@@ -5,6 +5,7 @@ import {
   formatCLP,
 } from "../api";
 import type { StoreConfig, WholesalePrice } from "../types";
+import { publicAsset } from "../publicAsset";
 
 type PurchaseOption = { label: string; total: number };
 type WholesaleCartLine = {
@@ -179,7 +180,7 @@ export function WholesaleExperience() {
     <main className="wholesale-page">
       <header className="wholesale-hero">
         <div className="wholesale-hero-inner">
-          <img className="wholesale-logo" src="/logo-siempre-natural.png" alt="Logo Siempre Natural" />
+          <img className="wholesale-logo" src={publicAsset("/logo-siempre-natural.png")} alt="Logo Siempre Natural" />
           <div className="wholesale-brand-copy">
             <p className="wholesale-brand-name">SIEMPRE NATURAL</p>
             <h1>Lista de precios mayorista</h1>

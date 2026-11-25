@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { publicAsset } from "../publicAsset";
 
 const values = [
   {
@@ -90,7 +91,7 @@ export function AboutPage() {
           <a className="about-hero-link" href="#nuestra-filosofia">Conoce nuestra filosofía <span aria-hidden="true">↓</span></a>
         </div>
         <div className="about-hero-visual">
-          <img src="/images/despensa-portada.webp" alt="Alimentos naturales a granel en una despensa" />
+          <img src={publicAsset("/images/despensa-portada.webp")} alt="Alimentos naturales a granel en una despensa" />
           <div className="about-hero-note">
             <span aria-hidden="true">“</span>
             <p>No se trata solamente de lo que comemos, sino de cómo vivimos, cómo nos movemos y cómo cuidamos el lugar donde vivimos.</p>
@@ -101,7 +102,7 @@ export function AboutPage() {
       <section className="about-story-section">
         <div className="container about-story">
           <figure className="about-story-visual">
-            <img src="/images/vida-sana-inicio.webp" alt="Alimentos naturales compartidos junto a un paisaje costero" loading="lazy" />
+            <img src={publicAsset("/images/vida-sana-inicio.webp")} alt="Alimentos naturales compartidos junto a un paisaje costero" loading="lazy" />
             <figcaption>Pequeñas elecciones.<br /><em>Grandes cambios.</em></figcaption>
           </figure>
           <div className="about-story-copy">
@@ -141,7 +142,7 @@ export function AboutPage() {
           <div className="about-values-grid">
             {values.map((value, index) => (
               <article className="about-value-card" key={value.title}>
-                <img src={value.image} alt={value.alt} loading={index > 1 ? "lazy" : "eager"} />
+                <img src={publicAsset(value.image)} alt={value.alt} loading={index > 1 ? "lazy" : "eager"} />
                 <div><h3>{value.title}</h3><p>{value.caption}</p></div>
               </article>
             ))}

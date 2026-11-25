@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 admin.site.site_header = "Siempre Natural"
 admin.site.site_title = "Siempre Natural | Administración"
@@ -8,7 +9,7 @@ admin.site.index_title = "Panel de administración"
 admin.site.enable_nav_sidebar = False
 admin.site.index_template = "admin/index_with_margin.html"
 admin.site.site_url = f"{settings.FRONTEND_BASE_URL.rstrip('/')}/"
-from django.urls import include, path
+from django.urls import include, path, re_path
 from rest_framework.routers import DefaultRouter
 
 from accounts.views import (
@@ -65,3 +66,13 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+frontend_index = settings.ROOT_DIR / "frontend-dist" / "index.html"
+if frontend_index.is_file():
+    urlpatterns.append(
+        re_path(
+            r"^(?!admin/|api/|static/).*$",
+            TemplateView.as_view(template_name="index.html"),
+            name="frontend-app",
+        )
+    )

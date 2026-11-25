@@ -1,0 +1,41 @@
+databases:
+  - name: siempre-natural-db
+    plan: free # Solo para probar. La base gratuita de Render vence a los 30 días.
+    region: ohio
+    databaseName: siempre_natural
+    user: siempre_natural
+
+services:
+  - type: web
+    name: siempre-natural-store
+    runtime: docker
+    plan: free
+    region: ohio
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/store-config/
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_SECURE_SSL_REDIRECT
+        value: "True"
+      - key: DJANGO_TRUST_X_FORWARDED_PROTO
+        value: "True"
+      - key: DJANGO_SECURE_HSTS_SECONDS
+        value: "0"
+      - key: DJANGO_COOKIE_SAMESITE
+        value: Lax
+      - key: DATABASE_URL
+        fromDatabase:
+          name: siempre-natural-db
+          property: connectionString
+      - key: DJANGO_BOOTSTRAP_ADMIN_USERNAME
+        sync: false
+      - key: DJANGO_BOOTSTRAP_ADMIN_EMAIL
+        sync: false
+      - key: DJANGO_BOOTSTRAP_ADMIN_PASSWORD
+        sync: false
+      - key: WHATSAPP_BUSINESS_NUMBER
+        sync: false
