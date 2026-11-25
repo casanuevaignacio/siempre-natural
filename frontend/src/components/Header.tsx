@@ -22,6 +22,7 @@ export function Header() {
         <nav className="main-nav" aria-label="Navegación principal">
           <NavLink to="/">Inicio</NavLink>
           <NavLink to="/catalogo">Catálogo</NavLink>
+          <NavLink to="/nosotros">Nosotros</NavLink>
           <NavLink to="/cuenta">Mi cuenta</NavLink>
           <NavLink to="/mayoristas">Mayoristas</NavLink>
         </nav>

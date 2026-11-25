@@ -49,6 +49,7 @@ export function Footer() {
         </div>
         {loadError && <span role="status">{loadError}</span>}
         <Link className="text-link" to="/privacidad">Privacidad</Link>
+        <Link className="text-link" to="/nosotros">Quiénes somos</Link>
       </div>
     </footer>
   );
